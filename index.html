@@ -1,23 +1,25 @@
-<html><head>
-    <title>Que no te lo cuenten, juegalo!</title>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>¡Que no te lo cuenten, juégalo!</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/styleBlack.css">
+    <link rel="stylesheet" href="./css/yeyobitz-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="chrome-extension://mpajidobdpdigheplhpfggmeldjcpgfh/assets/js/operator_script.js"></script><style>.opr-banner-ext{background-color:#fff}.opr-banner-ext-header{position:relative;z-index:2;width:100%;height:100%}.opr-banner-ext-middle{width:100%;height:200px;margin:8px 0;border-radius:8px;overflow:hidden}.opr-banner-ext-center{position:absolute;z-index:110;top:0;left:0;width:100%;height:100%;border-radius:8px;overflow:hidden}.opr-banner-ext-right_top,.opr-banner-ext-right_bottom,.opr-banner-ext-left{position:absolute;z-index:989;top:0;left:0;width:100%;height:100%;border-radius:8px;overflow:hidden}.opr-banner-ext-right_top.opr-banner-ext-aliexpress,.opr-banner-ext-right_bottom.opr-banner-ext-aliexpress,.opr-banner-ext-left.opr-banner-ext-aliexpress{border-radius:24px}.opr-banner-ext-footer{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);height:120px;width:970px;z-index:9999;border-radius:8px;overflow:hidden}.opr-banner-ext-footer.opr-banner-ext-aliexpress{border-radius:16px}.opr-banner-ext-category.opr-banner-ext-header{position:relative;height:80px}.opr-banner-ext-wrap{position:relative;width:100%;height:100%}.opr-banner-ext-img{background-repeat:no-repeat;background-size:cover;display:block;width:100%;height:100%;background-position:center !important}.opr-banner-ext-close{position:absolute;width:28px;height:28px;top:4px;right:4px;z-index:3;color:#828282;cursor:pointer;font-size:28px;line-height:28px;display:flex;align-items:center;justify-content:center}.opr-banner-ext-russia_aliexpress.opr-banner-ext-header{position:relative;margin:12px auto 0;max-width:1384px;height:80px;width:initial;border-radius:6px;overflow:hidden}.opr-banner-ext-russia_aliexpress.opr-banner-ext-header.opr-banner-ext-category,.opr-banner-ext-russia_aliexpress.opr-banner-ext-header.opr-banner-ext-items{max-width:1224px}.opr-banner-ext-aliexpress.opr-banner-ext-header{position:relative;max-width:100%;height:80px;width:initial;overflow:hidden}.opr-banner-ext-aliexpress.opr-banner-ext-center{border-radius:24px}.opr-banner-ext-best_aliexpress.opr-banner-ext-header{position:relative;max-width:100%;height:80px;width:initial;overflow:hidden}</style></head>
-    <body id="myPage">
+    <body id="myPage" class="scanlines">
     
     <!-- Sidebar on click -->
-    <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-      <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+    <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge pixel-corners" style="display:none;z-index:2" id="mySidebar">
+      <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Cerrar
         <i class="fa fa-remove"></i>
       </a>
-      <a href="#" class="w3-bar-item w3-button">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button">Link 3</a>
-      <a href="#" class="w3-bar-item w3-button">Link 4</a>
-      <a href="#" class="w3-bar-item w3-button">Link 5</a>
+      <a href="#team" class="w3-bar-item w3-button">Equipo</a>
+      <a href="#work" class="w3-bar-item w3-button">Trabajos</a>
+      <a href="#pricing" class="w3-bar-item w3-button">Servicios</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contacto</a>
     </nav>
     
     <!-- Navbar -->
@@ -25,13 +27,13 @@
      <div class="w3-bar w3-theme-d2 w3-left-align">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
       <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>www.blogfiction.cl</a>
-      <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
+      <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Equipo</a>
       <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Trabajos</a>
       <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Servicios</a>
       <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contacto</a>
         <div class="w3-dropdown-hover w3-hide-small">
         <button class="w3-button" title="Notifications">Redes Sociales <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block pixel-corners">
           <a href="https://instagram.com/blogfictioncl" class="w3-bar-item w3-button">Instagram </a>
           <a href="https://www.facebook.com/blogfiction.cl" class="w3-bar-item w3-button">Facebook</a>
           <a href="https://www.linkedin.com/company/blogfiction/" class="w3-bar-item w3-button">Linkedin</a>
@@ -43,43 +45,43 @@
     
       <!-- Navbar on small screens -->
       <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-        <a href="#team" class="w3-bar-item w3-button">Team</a>
+        <a href="#team" class="w3-bar-item w3-button">Equipo</a>
         <a href="#work" class="w3-bar-item w3-button">Trabajos</a>
         <a href="#pricing" class="w3-bar-item w3-button">Servicios</a>
         <a href="#contact" class="w3-bar-item w3-button">Contacto</a>
-        <a href="#" class="w3-bar-item w3-button">Search</a>
+        <a href="#" class="w3-bar-item w3-button">Buscar</a>
       </div>
     </div>
     
     <!-- Image Header -->
     <div class="w3-display-container w3-animate-opacity">
-      <img src="./img/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+      <img src="./img/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;" class="pixel-corners">
       <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">MAS INFO.</button>
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal pixel-corners" title="Más información">¡MÁS INFO!</button>
       </div>
     </div>
     
     <!-- Modal -->
     <div id="id01" class="w3-modal">
-      <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <div class="w3-modal-content w3-card-4 w3-animate-top pixel-corners">
         <header class="w3-container w3-teal w3-display-container"> 
           <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-          <h4>Oh espera! esto es solo una Alerta!.</h4>
-          <h5>Agrega informacion Relevante sobre ti <i class="fa fa-smile-o"></i></h5>
+          <h4>¡Oh espera! ¡Esto es solo una Alerta!</h4>
+          <h5>Agrega información relevante sobre ti <i class="fa fa-smile-o"></i></h5>
         </header>
         <div class="w3-container">
-          <p>Genial ,no? aqui podria ir tu whatsapp.</p>
-          <p>O algun enlace importante <a class="w3-text-teal" href="#">PARA TUS CLIENTES</a>, elige bien!</p>
+          <p>Genial, ¿no? Aquí podría ir tu WhatsApp.</p>
+          <p>O algún enlace importante <a class="w3-text-teal" href="#">PARA TUS CLIENTES</a>, ¡elige bien!</p>
         </div>
         <footer class="w3-container w3-teal">
-          <p>Y aqui va tu firma.</p>
+          <p>Y aquí va tu firma.</p>
         </footer>
       </div>
     </div>
     
     <!-- Team Container -->
-    <div class="w3-container w3-padding-64 w3-center" id="team">
-    <h2>NUESTRO EQUIPO</h2>
+    <div class="w3-container w3-padding-64 w3-center seccion-principal" id="team">
+    <h2 class="titulo-pixel">NUESTRO EQUIPO</h2>
     <p>Nuestro staff - Los "Monos chinos"</p>
     
     <div class="w3-row"><br>
@@ -115,30 +117,27 @@
     <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
     
     <div class="w3-quarter">
-    <h2>Nuestro trabajo</h2>
+    <h2 class="titulo-pixel">NUESTRO TRABAJO</h2>
     <p>Blogfiction fue Fundada el 7 de mayo de 2007, nuestra empresa comenzó como una tienda especializada en juegos coleccionables, convirtiéndose rápidamente en un punto de encuentro para la comunidad de jugadores. En 2013, dimos un paso más allá al incorporar una zona de juegos y la organización de torneos, consolidándonos como un espacio clave para la cultura lúdica.
 
       En 2018, evolucionamos hacia el ámbito de la ludificación y gamificación, ampliando nuestros servicios con talleres, cursos y actividades en terreno para diversas audiencias. Actualmente, hemos expandido aún más nuestro alcance, ofreciendo soluciones en desarrollo web, diseño y desarrollo de productos, diseño de juegos y creación de videojuegos, combinando nuestra pasión por el juego con la innovación tecnológica.</p>
     </div>
     
     <div class="w3-quarter">
-    <div class="w3-card w3-white">
+    <div class="w3-card w3-white pixel-corners">
       <img src="./img/snow.jpg" alt="Snow" style="width:100%">
       <div class="w3-container">
       <h3>Ludotecas</h3>
       <h4>Ludoteca de Juegos de Mesa en INACAP</h4>
-      <p>Nuestra Ludoteca de Juegos de Mesa INACAP fue una iniciativa de vinculación con el medio que busca fomentar la interacción, el aprendizaje y el desarrollo de habilidades a través del juego. Dirigida a estudiantes y docentes, esta actividad ofrece un espacio dinámico donde los participantes pueden explorar estrategias, fortalecer el trabajo en equipo y potenciar el pensamiento crítico mediante una variada selección de juegos de mesa.
-
-        Más que una instancia de entretenimiento, la ludoteca promueve la gamificación como herramienta educativa y social, generando experiencias que enriquecen el entorno académico y fortalecen la comunidad estudiantil.</p>
-      <p>Blablabla</p>
-      <p>Blablabla</p>
-      <p>Blablabla</p>
+      <p>Nuestra Ludoteca de Juegos de Mesa INACAP fue una iniciativa de vinculación con el medio que busca fomentar la interacción, el aprendizaje y el desarrollo de habilidades a través del juego. Dirigida a estudiantes y docentes, esta actividad ofrece un espacio dinámico donde los participantes pueden explorar estrategias, fortalecer el trabajo en equipo y potenciar el pensamiento crítico mediante una variada selección de juegos de mesa.</p>
+      <span class="w3-tag pixel-corners" style="background-color: var(--juego-fondo); color: var(--juego-texto); border: 2px solid var(--juego-borde);">Juego</span>
+      <span class="w3-tag pixel-corners" style="background-color: var(--tienda-fondo); color: var(--tienda-texto); border: 2px solid var(--tienda-borde);">Tienda</span>
       </div>
       </div>
     </div>
     
     <div class="w3-quarter">
-    <div class="w3-card w3-white">
+    <div class="w3-card w3-white pixel-corners">
       <img src="./img/lights.jpg" alt="Lights" style="width:100%">
       <div class="w3-container">
       <h3>Referencia 2</h3>
@@ -152,7 +151,7 @@
     </div>
     
     <div class="w3-quarter">
-    <div class="w3-card w3-white">
+    <div class="w3-card w3-white pixel-corners">
       <img src="./img/mountains.jpg" alt="Mountains" style="width:100%">
       <div class="w3-container">
       <h3>Referencia 3</h3>
@@ -173,11 +172,11 @@
     </div>
     
     <!-- Pricing Row -->
-    <div class="w3-row-padding w3-center w3-padding-64" id="pricing">
-        <h2>SERVICIOS</h2>
-        <p>Choose a pricing plan that fits your needs.</p><br>
+    <div class="w3-row-padding w3-center w3-padding-64 seccion-principal" id="pricing">
+        <h2 class="titulo-pixel">SERVICIOS</h2>
+        <p>Elige el plan que mejor se adapte a tus necesidades.</p><br>
         <div class="w3-third w3-margin-bottom">
-          <ul class="w3-ul w3-border w3-hover-shadow">
+          <ul class="w3-ul w3-border w3-hover-shadow pixel-corners">
             <li class="w3-theme">
               <p class="w3-xlarge">Servicio #1</p>
             </li>
@@ -187,16 +186,16 @@
             <li class="w3-padding-16"><b>Endless</b> Support</li>
             <li class="w3-padding-16">
               <h2 class="w3-wide"><i class="fa fa-usd"></i> 10</h2>
-              <span class="w3-opacity">per month</span>
+              <span class="w3-opacity">por mes</span>
             </li>
             <li class="w3-theme-l5 w3-padding-24">
-              <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+              <button class="w3-button w3-teal w3-padding-large pixel-corners"><i class="fa fa-check"></i> ¡Registrarse!</button>
             </li>
           </ul>
         </div>
     
         <div class="w3-third w3-margin-bottom">
-          <ul class="w3-ul w3-border w3-hover-shadow">
+          <ul class="w3-ul w3-border w3-hover-shadow pixel-corners">
             <li class="w3-theme-l2">
               <p class="w3-xlarge">Servicio #2</p>
             </li>
@@ -206,16 +205,16 @@
             <li class="w3-padding-16"><b>Endless</b> Support</li>
             <li class="w3-padding-16">
               <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
-              <span class="w3-opacity">per month</span>
+              <span class="w3-opacity">por mes</span>
             </li>
             <li class="w3-theme-l5 w3-padding-24">
-              <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+              <button class="w3-button w3-teal w3-padding-large pixel-corners"><i class="fa fa-check"></i> ¡Registrarse!</button>
             </li>
           </ul>
         </div>
     
         <div class="w3-third w3-margin-bottom">
-          <ul class="w3-ul w3-border w3-hover-shadow">
+          <ul class="w3-ul w3-border w3-hover-shadow pixel-corners">
             <li class="w3-theme">
               <p class="w3-xlarge">Servicio #3</p>
             </li>
@@ -225,10 +224,10 @@
             <li class="w3-padding-16"><b>Endless</b> Support</li>
             <li class="w3-padding-16">
               <h2 class="w3-wide"><i class="fa fa-usd"></i> 50</h2>
-              <span class="w3-opacity">per month</span>
+              <span class="w3-opacity">por mes</span>
             </li>
             <li class="w3-theme-l5 w3-padding-24">
-              <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+              <button class="w3-button w3-teal w3-padding-large pixel-corners"><i class="fa fa-check"></i> ¡Registrarse!</button>
             </li>
           </ul>
         </div>
@@ -238,21 +237,21 @@
     <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
       <div class="w3-row">
         <div class="w3-col m5">
-        <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contacto</span></div>
-          <h3>Direccion</h3>
-          <p>Algun lugar del mundo.</p>
-          <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;Ciudad, Pais</p>
+        <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar titulo-pixel">Contacto</span></div>
+          <h3>Dirección</h3>
+          <p>Algún lugar del mundo.</p>
+          <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;Ciudad, País</p>
           <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;+00 1515151515</p>
           <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;test@test.com</p>
         </div>
         <div class="w3-col m7">
           <div class="w3-quarter">
             
-            <div class="w3-card w3-white">
+            <div class="w3-card w3-white pixel-corners">
               <img src="./img/snow.jpg" alt="Snow" style="width:100%">
               <div class="w3-container">
               <h3>Horarios</h3>
-              <h4>segun servicio</h4>
+              <h4>según servicio</h4>
               <p>Blablabla</p>
               <p>Blablabla</p>
               <p>Blablabla</p>
@@ -262,7 +261,7 @@
             </div>
 
             <div class="w3-quarter">
-              <div class="w3-card w3-white">
+              <div class="w3-card w3-white pixel-corners">
                 <img src="./img/snow.jpg" alt="Snow" style="width:100%">
                 <div class="w3-container">
                 <h3>lugares</h3>
@@ -280,21 +279,21 @@
     </div>
     
     <!-- Image of location/map -->
-    <img src="./img/map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">
+    <img src="./img/map.jpg" class="w3-image w3-greyscale-min pixel-corners" style="width:100%;">
     
     <!-- Footer -->
     <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-      <h4>Nuestras Redes Sociales</h4>
+      <h4 class="titulo-pixel">Nuestras Redes Sociales</h4>
       <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
       <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
       <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Youtube"><i class="fa fa-youtube"></i></a>
       <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Instagram"><i class="fa fa-instagram"></i></a>
       <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-      <p>Code whit <i class="fa fa-heart"></i> By<a href="https://github.com/Javitajonnes" target="_blank"> @Javitajonnes </a></p>
+      <p>Código con <i class="fa fa-heart"></i> por <a href="https://github.com/Javitajonnes" target="_blank"> @Javitajonnes </a></p>
     
       <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
         <span class="w3-text w3-padding w3-teal w3-hide-small">Volver al Inicio</span>   
-        <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+        <a class="w3-button w3-theme pixel-corners" href="#myPage"><span class="w3-xlarge">
         <i class="fa fa-chevron-circle-up"></i></span></a>
       </div>
     </footer>

@@ -5,190 +5,202 @@
  */
 
 function initWork() {
-  // Elementos del DOM
+  // Referencias a elementos del DOM
   const workSection = document.getElementById('work');
-  if (!workSection) return;
-  
+  const filterButtons = workSection.querySelectorAll('.filter-btn');
   const workCards = workSection.querySelectorAll('.work-card');
-  const modal = document.getElementById('projectModal');
-  const modalContent = modal ? modal.querySelector('.modal-body') : null;
-  const closeModalBtn = modal ? modal.querySelector('.close-modal') : null;
+  const projectModal = document.getElementById('projectModal');
+  const modalBody = projectModal.querySelector('.modal-body');
+  const closeModal = projectModal.querySelector('.close-modal');
+  const viewProjectButtons = workSection.querySelectorAll('.view-project-btn');
+  const viewAllButton = workSection.querySelector('.view-all-btn');
   
-  // 1. Configurar los eventos del modal
-  function setupModal() {
-    if (!modal) return;
-    
-    // Cerrar modal
-    closeModalBtn.addEventListener('click', closeModal);
-    
-    // Cerrar también al hacer clic fuera del contenido
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) {
-        closeModal();
+  // Función para filtrar proyectos por categoría
+  function filterProjects(filterValue) {
+    workCards.forEach(card => {
+      // Obtener categorías del proyecto (pueden ser múltiples)
+      const categories = card.getAttribute('data-category');
+      
+      if (filterValue === 'all' || categories.includes(filterValue)) {
+        // Animación suave para mostrar el card
+        card.style.display = 'flex';
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 50);
+      } else {
+        // Animación suave para ocultar el card
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.display = 'none';
+        }, 300);
       }
-    });
-    
-    // Cerrar con tecla ESC
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.style.display === 'block') {
-        closeModal();
-      }
-    });
-    
-    // Configurar botones para abrir el modal
-    const viewProjectBtns = workSection.querySelectorAll('.view-project-btn');
-    viewProjectBtns.forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Obtener los datos de la tarjeta para mostrar en el modal
-        const card = this.closest('.work-card');
-        openProjectModal(card);
-      });
     });
   }
-
-  // 2. Abrir el modal con los datos del proyecto
-  function openProjectModal(card) {
-    if (!modal || !modalContent) return;
-    
-    // Extraer información del proyecto
-    const title = card.querySelector('h3').textContent;
-    const subtitle = card.querySelector('h4').textContent;
-    const description = card.querySelector('p').textContent;
-    const image = card.querySelector('img').src;
-    const tags = card.querySelectorAll('.w3-tag');
-    
-    // Construir el contenido del modal
-    let tagsHTML = '';
-    tags.forEach(tag => {
-      tagsHTML += `<span class="${tag.className}">${tag.textContent}</span>`;
+  
+  // Manejar el click en botones de filtro
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remover clase active de todos los botones
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // Agregar clase active al botón clickeado
+      this.classList.add('active');
+      
+      // Filtrar proyectos según la categoría
+      const filterValue = this.getAttribute('data-filter');
+      filterProjects(filterValue);
     });
-    
-    // Llenar el modal con contenido
-    modalContent.innerHTML = `
-      <div class="modal-project">
-        <div class="modal-project-image">
-          <img src="${image}" alt="${title}" class="pixel-corners">
+  });
+  
+  // Manejar click en botones "Ver Proyecto"
+  viewProjectButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Encontrar la tarjeta padre
+      const card = this.closest('.work-card');
+      
+      // Obtener datos del proyecto
+      const imgSrc = card.querySelector('img').src;
+      const title = card.querySelector('h3').textContent;
+      const subtitle = card.querySelector('h4').textContent;
+      const description = card.querySelector('p').textContent;
+      const tags = Array.from(card.querySelectorAll('.w3-tag')).map(tag => tag.outerHTML).join('');
+      
+      // Generar contenido extendido para el modal
+      const extendedDesc = `
+        <p>${description}</p>
+        <p>Este proyecto representa nuestra dedicación a crear experiencias excepcionales y soluciones innovadoras. Utilizamos tecnologías de vanguardia y metodologías ágiles para asegurar resultados de alta calidad.</p>
+        <p>Para más información sobre este proyecto o para discutir cómo podemos ayudarte con algo similar, no dudes en contactarnos.</p>
+      `;
+      
+      // Llenar el modal con los datos del proyecto
+      modalBody.innerHTML = `
+        <img src="${imgSrc}" alt="${title}" class="pixel-corners">
+        <h2>${title}</h2>
+        <h3>${subtitle}</h3>
+        <div class="modal-project-tags">${tags}</div>
+        <div class="modal-project-description">${extendedDesc}</div>
+        <div class="modal-project-actions">
+          <button class="btn-pixel pixel-corners contact-project-btn">CONTACTAR SOBRE ESTE PROYECTO</button>
         </div>
-        <div class="modal-project-info">
-          <h2>${title}</h2>
-          <h3>${subtitle}</h3>
-          <div class="modal-project-tags">${tagsHTML}</div>
-          <div class="modal-project-description">
-            <p>${description}</p>
-            <p>Este es un ejemplo de proyecto destacado de nuestra empresa. Utilizamos tecnologías avanzadas y metodologías ágiles para desarrollar soluciones efectivas para nuestros clientes.</p>
-          </div>
-          <div class="modal-project-actions">
-            <button class="action-btn pixel-corners">Ver detalles</button>
-            <button class="action-btn pixel-corners">Contactar</button>
-          </div>
-        </div>
-      </div>
-    `;
+      `;
+      
+      // Mostrar el modal con animación
+      projectModal.style.display = 'block';
+      
+      // Configurar el botón de contacto en el modal
+      const contactProjectBtn = modalBody.querySelector('.contact-project-btn');
+      if (contactProjectBtn) {
+        contactProjectBtn.addEventListener('click', function() {
+          // Cerrar el modal
+          projectModal.style.display = 'none';
+          
+          // Scroll hasta la sección de contacto
+          document.getElementById('contact').scrollIntoView({
+            behavior: 'smooth'
+          });
+          
+          // Opcional: pre-llenar el formulario con información del proyecto
+          const contactSubject = document.querySelector('#contact-form input[name="Subject"]');
+          if (contactSubject) {
+            contactSubject.value = `Consulta sobre: ${title}`;
+          }
+        });
+      }
+    });
+  });
+  
+  // Cerrar el modal al hacer click en la X
+  closeModal.addEventListener('click', function() {
+    projectModal.style.display = 'none';
+  });
+  
+  // Cerrar el modal al hacer click fuera del contenido
+  window.addEventListener('click', function(event) {
+    if (event.target === projectModal) {
+      projectModal.style.display = 'none';
+    }
+  });
+  
+  // También cerrar con la tecla ESC
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && projectModal.style.display === 'block') {
+      projectModal.style.display = 'none';
+    }
+  });
+  
+  // Manejar el botón "Ver todos los proyectos"
+  if (viewAllButton) {
+    viewAllButton.addEventListener('click', function() {
+      // Aquí podrías redirigir a una página de portfolio completa
+      // o cargar más proyectos con AJAX
+      
+      // Por ahora, simplemente mostramos todos los proyectos
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      filterButtons[0].classList.add('active'); // Activar el botón "Todos"
+      filterProjects('all');
+      
+      // Notificar al usuario
+      showNotification('¡Mostrando todos los proyectos disponibles!');
+    });
+  }
+  
+  // Función para mostrar notificaciones
+  function showNotification(message) {
+    // Crear elemento de notificación
+    const notification = document.createElement('div');
+    notification.className = 'notification pixel-corners';
+    notification.textContent = message;
     
-    // Mostrar el modal con animación
-    modal.style.display = 'block';
+    // Añadir al DOM
+    document.body.appendChild(notification);
     
-    // Añadir la clase visible con un pequeño retraso para la animación
+    // Mostrar con animación
     setTimeout(() => {
-      modal.querySelector('.modal-content').classList.add('visible');
+      notification.classList.add('show');
     }, 10);
     
-    // Prevenir scroll en el body
-    document.body.style.overflow = 'hidden';
-  }
-
-  // 3. Cerrar el modal
-  function closeModal() {
-    if (!modal) return;
-    
-    // Remover la clase visible para iniciar la animación de salida
-    modal.querySelector('.modal-content').classList.remove('visible');
-    
-    // Ocultar el modal con animación
+    // Ocultar después de 3 segundos
     setTimeout(() => {
-      modal.style.display = 'none';
-      
-      // Restaurar scroll
-      document.body.style.overflow = 'auto';
-    }, 300);
+      notification.classList.remove('show');
+      setTimeout(() => {
+        notification.remove();
+      }, 300);
+    }, 3000);
   }
-
-  // 4. Configurar efectos hover en las tarjetas
-  function setupCardEffects() {
-    workCards.forEach(card => {
-      // Obtener las etiquetas dentro de esta tarjeta
-      const tags = card.querySelectorAll('.w3-tag');
-      
-      // Efecto hover en tarjetas
-      card.addEventListener('mouseenter', function() {
-        // Añadir animación a las etiquetas con efecto escalonado
-        tags.forEach((tag, index) => {
-          setTimeout(() => {
-            tag.style.transform = 'translateY(-3px) rotate(-3deg)';
-          }, index * 80);
-        });
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        // Restaurar las etiquetas
-        tags.forEach(tag => {
-          tag.style.transform = '';
-        });
-      });
+  
+  // Aplicar efectos de hover mejorados
+  workCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.classList.add('hovered');
     });
-  }
-
-  // 5. Manejar efecto de carga de imágenes
-  function setupImageLoading() {
-    const images = workSection.querySelectorAll('.work-card-image img');
     
-    images.forEach(img => {
-      // Añadir clase de carga
-      const imageContainer = img.parentElement;
-      imageContainer.classList.add('loading');
+    card.addEventListener('mouseleave', function() {
+      this.classList.remove('hovered');
+    });
+  });
+  
+  // Efectos de scroll para revelar elementos
+  function checkVisibility() {
+    workCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const isVisible = (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.9 &&
+        rect.bottom >= 0
+      );
       
-      // Remover clase de carga cuando la imagen se carga
-      img.addEventListener('load', () => {
-        imageContainer.classList.remove('loading');
-      });
-      
-      // Si la imagen ya está cargada (desde caché)
-      if (img.complete) {
-        imageContainer.classList.remove('loading');
+      if (isVisible) {
+        card.classList.add('visible');
       }
     });
   }
-
-  // 6. Función de inicialización principal
-  function initialize() {
-    // Asegurar que el modal esté oculto inicialmente
-    if (modal) {
-      modal.style.display = 'none';
-    }
-    
-    // Hacer visibles todas las tarjetas inmediatamente
-    workCards.forEach((card) => {
-      // Eliminar la dependencia de la clase card-visible
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    });
-    
-    // Configurar modal
-    setupModal();
-    
-    // Configurar efectos hover
-    setupCardEffects();
-    
-    // Configurar efecto de carga de imágenes
-    setupImageLoading();
-  }
   
-  // Iniciar el componente
-  initialize();
+  // Verificar visibilidad inicial y en cada scroll
+  checkVisibility();
+  window.addEventListener('scroll', checkVisibility);
   
-  console.log('Work component initialized - versión simplificada y corregida');
+  console.log('Work component initialized with enhanced filters and interactions');
 }
 
 // Exportar la función de inicialización

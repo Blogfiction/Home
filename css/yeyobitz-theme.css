@@ -5,12 +5,39 @@
 
 /* Variables de colores */
 :root {
-  /* Colores Principales */
-  --fondo-principal: #FFFFE0; /* Retro Yellow */
-  --texto-principal: #1F2937; /* Gray 800 */
-  --acento-primario: #1F2937; /* Gray 800 */
-  --acento-secundario: #4B5563; /* Gray 600 */
-  --acento-peligro: #DC2626; /* Red 600 */
+  /* Colores principales */
+  --primary-color: #7E3FF2;       /* Púrpura más vibrante */
+  --primary-dark: #5D25C4;        /* Púrpura oscuro */
+  --primary-light: #9C6FF9;       /* Púrpura claro */
+  
+  /* Colores de acento */
+  --accent-color: #FF5E5B;        /* Rojo/coral con mejor contraste */
+  --accent-secondary: #00E3CC;    /* Turquesa vibrante */
+  --accent-tertiary: #FFD166;     /* Amarillo cálido */
+  
+  /* Grises */
+  --dark-gray: #151521;           /* Casi negro con tinte púrpura */
+  --medium-gray: #2C2C3A;         /* Gris oscuro */
+  --light-gray: #E0E0E0;          /* Gris claro */
+
+  /* Colores de interfaz */
+  --background-main: #F5F5F5;     /* Fondo principal claro */
+  --background-dark: var(--dark-gray);  /* Fondo oscuro */
+  --text-dark: #121212;           /* Texto oscuro */
+  --text-light: #FFFFFF;          /* Texto claro */
+  --text-muted: #424242;          /* Texto secundario */
+  
+  /* Colores de estado */
+  --success: #00BFA6;             /* Verde */
+  --warning: #FFD166;             /* Amarillo */
+  --error: #FF5E5B;               /* Rojo */
+  --info: #20A4F3;                /* Azul */
+  
+  /* Colores para tags */
+  --tag-juego: var(--primary-color);
+  --tag-web: var(--accent-secondary);
+  --tag-design: var(--accent-tertiary);
+  --tag-tienda: var(--accent-color);
 
   /* Colores Secundarios */
   --fondo-secundario: #FFFFFF; /* White */
@@ -21,7 +48,6 @@
   /* Colores de Estado */
   --exito: #10B981; /* Green 500 */
   --advertencia: #F59E0B; /* Yellow 500 */
-  --error: #EF4444; /* Red 500 */
   --informacion: #3B82F6; /* Blue 500 */
 
   /* Colores de Etiquetas */
@@ -43,7 +69,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, .w3-button, .titulo-pixel {
   font-family: 'Press Start 2P', cursive;
-  color: var(--texto-principal);
+  color: var(--text-dark);
 }
 
 /* Jerarquía de textos */
@@ -298,28 +324,130 @@ h4, h5, h6 {
 
 /* Efectos retro */
 .pixel-corners {
+  position: relative;
   clip-path: polygon(
-    0% 4px, 4px 4px, 4px 0%, calc(100% - 4px) 0%, calc(100% - 4px) 4px, 100% 4px,
-    100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 4px calc(100% - 4px), 0% calc(100% - 4px)
+    0px 4px,
+    4px 0px,
+    calc(100% - 4px) 0px,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    0px calc(100% - 4px)
   );
+}
+
+.scanlines {
+  position: relative;
+  overflow: hidden;
 }
 
 .scanlines::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
+  z-index: 9999;
+  background: linear-gradient(
     to bottom,
-    transparent,
-    transparent 1px,
-    rgba(0, 0, 0, 0.05) 1px,
-    rgba(0, 0, 0, 0.05) 2px
+    transparent 50%,
+    rgba(0, 0, 0, 0.05) 51%
   );
+  background-size: 100% 4px;
   pointer-events: none;
-  z-index: 1;
+  opacity: 0.15;
+}
+
+/* Sombras estilo pixel art */
+.pixel-shadow {
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.pixel-shadow:hover {
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo de tags para categorías */
+.w3-tag.pixel-corners {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  margin-right: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-juego {
+  background-color: var(--tag-juego);
+  color: white;
+}
+
+.tag-web {
+  background-color: var(--tag-web);
+  color: var(--text-dark);
+}
+
+.tag-design {
+  background-color: var(--tag-design);
+  color: var(--text-dark);
+}
+
+.tag-tienda {
+  background-color: var(--tag-tienda);
+  color: white;
+}
+
+/* Estilos para secciones */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subheader-line {
+  height: 4px;
+  width: 80px;
+  background-color: var(--accent-color);
+  margin: 0 auto;
+}
+
+/* Transiciones para elementos interactivos */
+.smooth-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Botones personalizados */
+.btn-pixel {
+  font-family: 'Press Start 2P', cursive, sans-serif;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-pixel:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-pixel:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Importación de fuentes */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  font-display: swap;
 }
 
 /* Secciones principales */
@@ -335,13 +463,13 @@ h4, h5, h6 {
 
 /* Estilos personalizados para el tema */
 .w3-theme {
-  color: white !important;
-  background-color: var(--acento-primario) !important;
+  color: var(--text-light) !important;
+  background-color: var(--primary-color) !important;
 }
 
 .w3-theme-d1 {
-  color: white !important;
-  background-color: var(--acento-primario) !important;
+  color: var(--text-light) !important;
+  background-color: var(--primary-dark) !important;
 }
 
 .w3-theme-d2 {
@@ -350,8 +478,8 @@ h4, h5, h6 {
 }
 
 .w3-theme-l1 {
-  color: var(--texto-principal) !important;
-  background-color: var(--fondo-principal) !important;
+  color: var(--text-dark) !important;
+  background-color: var(--primary-light) !important;
 }
 
 .w3-theme-l2 {

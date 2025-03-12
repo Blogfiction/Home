@@ -12,13 +12,22 @@
       <p>En 2018, evolucionamos hacia el ámbito de la ludificación y gamificación, ampliando nuestros servicios con talleres, cursos y actividades en terreno para diversas audiencias. Actualmente, hemos expandido aún más nuestro alcance, ofreciendo soluciones en desarrollo web, diseño y desarrollo de productos, diseño de juegos y creación de videojuegos, combinando nuestra pasión por el juego con la innovación tecnológica.</p>
     </div>
     
+    <!-- Filtros de categoría -->
+    <div class="work-filters">
+      <button class="filter-btn pixel-corners active" data-filter="all">Todos</button>
+      <button class="filter-btn pixel-corners" data-filter="juego">Juegos</button>
+      <button class="filter-btn pixel-corners" data-filter="web">Web</button>
+      <button class="filter-btn pixel-corners" data-filter="design">Diseño</button>
+      <button class="filter-btn pixel-corners" data-filter="tienda">Tienda</button>
+    </div>
+    
     <div class="work-grid">
       <!-- Proyecto 1 -->
-      <div class="work-card pixel-corners">
+      <div class="work-card pixel-corners" data-category="juego tienda">
         <div class="work-card-image">
           <img src="./img/snow.jpg" alt="Ludoteca de Juegos" loading="lazy" width="400" height="225">
           <div class="work-overlay">
-            <button class="view-project-btn">Ver Proyecto</button>
+            <button class="view-project-btn pixel-corners">Ver Proyecto</button>
           </div>
         </div>
         <div class="work-card-content">
@@ -33,11 +42,11 @@
       </div>
       
       <!-- Proyecto 2 -->
-      <div class="work-card pixel-corners">
+      <div class="work-card pixel-corners" data-category="web design">
         <div class="work-card-image">
           <img src="./img/lights.jpg" alt="Desarrollo Web" loading="lazy" width="400" height="225">
           <div class="work-overlay">
-            <button class="view-project-btn">Ver Proyecto</button>
+            <button class="view-project-btn pixel-corners">Ver Proyecto</button>
           </div>
         </div>
         <div class="work-card-content">
@@ -52,11 +61,11 @@
       </div>
       
       <!-- Proyecto 3 -->
-      <div class="work-card pixel-corners">
+      <div class="work-card pixel-corners" data-category="juego design">
         <div class="work-card-image">
           <img src="./img/mountains.jpg" alt="Juego de Mesa" loading="lazy" width="400" height="225">
           <div class="work-overlay">
-            <button class="view-project-btn">Ver Proyecto</button>
+            <button class="view-project-btn pixel-corners">Ver Proyecto</button>
           </div>
         </div>
         <div class="work-card-content">
@@ -71,11 +80,11 @@
       </div>
       
       <!-- Proyecto 4 -->
-      <div class="work-card pixel-corners">
+      <div class="work-card pixel-corners" data-category="web tienda">
         <div class="work-card-image">
           <img src="./img/lights.jpg" alt="Tienda Online" loading="lazy" width="400" height="225">
           <div class="work-overlay">
-            <button class="view-project-btn">Ver Proyecto</button>
+            <button class="view-project-btn pixel-corners">Ver Proyecto</button>
           </div>
         </div>
         <div class="work-card-content">
@@ -88,6 +97,11 @@
           </div>
         </div>
       </div>
+    </div>
+    
+    <!-- Botón Ver todos los proyectos -->
+    <div class="view-all-btn-container">
+      <button class="view-all-btn pixel-corners">VER TODOS LOS PROYECTOS</button>
     </div>
     
     <!-- Modal para detalles del proyecto -->

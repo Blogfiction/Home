@@ -1,17 +1,32 @@
 /* Estilos para el componente Services */
 
 #pricing {
-  background-color: var(--fondo-principal);
+  background-color: var(--background-main);
   padding: 64px 20px;
+  position: relative;
+}
+
+#pricing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(0,0,0,0.03)"/></svg>');
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 #pricing h2.titulo-pixel {
   font-family: 'Press Start 2P', cursive;
   font-size: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   position: relative;
   display: inline-block;
   padding-bottom: 15px;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
 }
 
 #pricing h2.titulo-pixel::after {
@@ -22,19 +37,25 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background-color: var(--acento-primario);
+  background-color: var(--accent-color);
 }
 
 #pricing p {
   font-size: 16px;
-  margin-bottom: 20px;
-  color: var(--texto-principal);
+  margin-bottom: 30px;
+  color: var(--text-dark);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 #pricing .w3-ul {
-  border: 4px solid var(--borde-principal) !important;
+  border: 4px solid var(--primary-dark) !important;
   box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0;
+  overflow: hidden;
 }
 
 #pricing .w3-ul:hover {
@@ -45,24 +66,29 @@
 #pricing .w3-ul li {
   padding: 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#pricing .w3-ul li:hover {
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 #pricing .w3-ul li:first-child {
-  border-bottom: 4px solid var(--borde-principal);
+  border-bottom: 4px solid var(--primary-dark);
 }
 
 #pricing .w3-theme {
-  background-color: var(--acento-primario) !important;
-  color: white !important;
+  background-color: var(--primary-color) !important;
+  color: var(--text-light) !important;
 }
 
 #pricing .w3-theme-l2 {
-  background-color: var(--acento-secundario) !important;
-  color: white !important;
+  background-color: var(--primary-light) !important;
+  color: var(--text-dark) !important;
 }
 
 #pricing .w3-theme-l5 {
-  background-color: var(--fondo-secundario) !important;
+  background-color: var(--background-main) !important;
   border-top: 2px dashed rgba(0, 0, 0, 0.1);
 }
 
@@ -70,49 +96,80 @@
   font-family: 'Press Start 2P', cursive;
   font-size: 18px;
   margin: 5px 0;
+  color: var(--text-light);
 }
 
 #pricing .w3-wide {
   font-family: 'Press Start 2P', cursive;
-  margin: 5px 0;
-  color: var(--acento-primario);
+  margin: 10px 0;
+  color: var(--accent-tertiary);
+  font-size: 16px;
 }
 
 #pricing .w3-opacity {
   font-size: 14px;
-  color: var(--acento-secundario);
+  color: var(--text-muted);
+  margin-bottom: 10px;
 }
 
 #pricing .w3-button {
   font-family: 'Press Start 2P', cursive;
   font-size: 12px;
   padding: 12px 16px;
-  background-color: var(--acento-primario) !important;
-  color: white !important;
-  border: 3px solid var(--borde-principal);
+  background-color: var(--accent-color) !important;
+  color: var(--text-light) !important;
+  border: 3px solid var(--primary-dark);
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
-  transition: all 0.2s;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
 #pricing .w3-button:hover {
   transform: translate(2px, 2px);
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-  background-color: var(--acento-secundario) !important;
+  background-color: var(--accent-secondary) !important;
+  color: var(--text-dark) !important;
 }
 
 #pricing .w3-button .fa-check {
   margin-right: 5px;
+  color: var(--accent-tertiary);
 }
 
 /* Efectos destacados para el plan central */
-#pricing .w3-third:nth-child(3) .w3-ul {
+#pricing .w3-third:nth-child(2) .w3-ul {
   transform: scale(1.05);
   z-index: 1;
   position: relative;
+  border-color: var(--accent-color) !important;
 }
 
-#pricing .w3-third:nth-child(3) .w3-ul:hover {
+#pricing .w3-third:nth-child(2) .w3-ul:hover {
   transform: scale(1.05) translateY(-10px);
+}
+
+#pricing .w3-third:nth-child(2) .w3-ul li:first-child {
+  border-bottom: 4px solid var(--accent-color);
+  background-color: var(--accent-color) !important;
+}
+
+#pricing .w3-third:nth-child(2) .w3-button {
+  background-color: var(--primary-color) !important;
+  border-color: var(--accent-color);
+}
+
+/* Etiqueta de popular */
+#pricing .w3-third:nth-child(2) .w3-ul li:first-child::after {
+  content: 'POPULAR';
+  position: absolute;
+  top: 10px;
+  right: -30px;
+  background-color: var(--accent-tertiary);
+  color: var(--text-dark);
+  font-size: 10px;
+  padding: 5px 30px;
+  transform: rotate(45deg);
+  font-family: 'Press Start 2P', cursive;
 }
 
 /* Responsividad */
@@ -122,11 +179,23 @@
     margin-bottom: 30px;
   }
   
-  #pricing .w3-third:nth-child(3) .w3-ul {
+  #pricing .w3-third:nth-child(2) .w3-ul {
     transform: scale(1);
   }
   
-  #pricing .w3-third:nth-child(3) .w3-ul:hover {
+  #pricing .w3-third:nth-child(2) .w3-ul:hover {
     transform: translateY(-10px);
+  }
+  
+  #pricing h2.titulo-pixel {
+    font-size: 18px;
+  }
+  
+  #pricing .w3-xlarge {
+    font-size: 16px;
+  }
+  
+  #pricing .w3-wide {
+    font-size: 14px;
   }
 } 

@@ -39,6 +39,7 @@ function initComponents() {
       { id: 'info-modal-container', url: './components/InfoModal.html' },
       { id: 'team-container', url: './components/Team.html' },
       { id: 'work-container', url: './components/Work.html' },
+      { id: 'testimonials-container', url: './components/Testimonials.html' },
       { id: 'pricing-container', url: './components/Services.html' },
       { id: 'contact-container', url: './components/Contact.html' },
       { id: 'footer-container', url: './components/Footer.html' }
@@ -65,11 +66,17 @@ function initComponents() {
         case 'work-container':
           if (typeof initWork === 'function') initWork();
           break;
+        case 'testimonials-container':
+          if (typeof initTestimonials === 'function') initTestimonials();
+          break;
         case 'pricing-container':
           if (typeof initServices === 'function') initServices();
           break;
         case 'footer-container':
           if (typeof initFooter === 'function') initFooter();
+          break;
+        case 'hero-container':
+          if (typeof initHero === 'function') initHero();
           break;
         // Agrega más casos según sea necesario
       }

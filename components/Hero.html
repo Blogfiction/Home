@@ -1,7 +1,19 @@
 <!-- Componente: Hero (Cabecera con imagen) -->
-<div class="w3-display-container w3-animate-opacity">
-  <img src="./img/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;" class="pixel-corners">
-  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal pixel-corners" title="Más información">¡MÁS INFO!</button>
+<div class="w3-display-container w3-animate-opacity hero-container">
+  <div class="hero-overlay"></div>
+  <img src="./img/sailboat.jpg" alt="Blogfiction" style="width:100%;min-height:450px;max-height:680px;" class="pixel-corners hero-image">
+  <div class="w3-container w3-display-middle w3-center hero-content">  
+    <h1 class="hero-title">Blogfiction.cl</h1>
+    <p class="hero-subtitle">Que no te lo cuenten <br> ¡JUÉGALO!</p>
+    <div class="hero-buttons">
+      <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal pixel-corners primary-cta" title="Conócenos">CONOCE NUESTRO TRABAJO</button>
+      <a href="#contact" class="w3-button w3-large w3-white w3-hover-light-grey pixel-corners secondary-cta">CONTÁCTANOS</a>
+    </div>
+  </div>
+  <div class="w3-container w3-display-bottomright w3-margin-bottom scroll-indicator">  
+    <div class="scroll-down">
+      <span>Descubre más</span>
+      <i class="fa fa-chevron-down"></i>
+    </div>
   </div>
 </div> 

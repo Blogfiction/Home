@@ -1,0 +1,142 @@
+/* Estilos para el componente InfoModal */
+
+.w3-modal {
+  z-index: 999;
+  padding-top: 50px;
+}
+
+.w3-modal-content {
+  border: 4px solid var(--primary-dark);
+  background-color: var(--background-main);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  animation: modalFadeIn 0.4s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.w3-modal-content .w3-container {
+  padding: 24px;
+}
+
+.w3-modal-content h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.w3-modal-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.w3-modal-content .w3-button {
+  background-color: var(--accent-color);
+  color: var(--text-light);
+  border: 3px solid var(--primary-dark);
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.w3-modal-content .w3-button:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.w3-modal-content .w3-display-topright {
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-dark);
+}
+
+.w3-modal-content .w3-display-topright:hover {
+  color: var(--accent-color);
+}
+
+/* Secciones dentro del modal */
+.modal-section {
+  margin-bottom: 30px;
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+}
+
+.modal-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.modal-section h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--accent-secondary);
+}
+
+.modal-section ul {
+  padding-left: 20px;
+}
+
+.modal-section ul li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.modal-section ul li::before {
+  content: '>';
+  position: absolute;
+  left: -20px;
+  color: var(--accent-color);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .w3-modal-content {
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .w3-modal-content h2 {
+    font-size: 20px;
+  }
+  
+  .w3-modal-content p {
+    font-size: 14px;
+  }
+  
+  .w3-modal-content .w3-button {
+    font-size: 12px;
+    padding: 8px 16px;
+    width: 100%;
+  }
+  
+  .modal-section h3 {
+    font-size: 16px;
+  }
+} 

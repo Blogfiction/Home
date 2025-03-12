@@ -1,11 +1,11 @@
 /* Estilos para el componente Footer */
 
 .yeyobitz-footer {
-  background-color: #1F2937; /* Fondo oscuro para el footer */
-  border-top: 4px solid var(--acento-primario);
+  background-color: var(--background-dark);
+  border-top: 4px solid var(--primary-color);
   position: relative;
   padding-bottom: 80px !important;
-  color: #FFFFFF; /* Texto blanco para mejor contraste */
+  color: var(--text-light);
 }
 
 .footer-contenido {
@@ -29,7 +29,8 @@
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
-  color: #FFFFFF; /* Asegurar que el título sea blanco */
+  color: var(--accent-tertiary);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
 .footer-titulo::after {
@@ -39,7 +40,7 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: #10B981; /* Color verde para el subrayado */
+  background-color: var(--accent-color);
 }
 
 .footer-links {
@@ -49,21 +50,36 @@
 
 .footer-links a {
   margin: 5px 0;
-  color: #E5E7EB; /* Gris claro para enlaces en reposo */
+  color: var(--text-light);
   text-decoration: none;
   transition: color 0.3s, transform 0.3s;
   display: inline-block;
   padding: 3px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-links a::before {
+  content: '>';
+  position: absolute;
+  left: -15px;
+  color: var(--accent-color);
+  transition: transform 0.3s;
 }
 
 .footer-links a:hover {
-  color: #FFFFE0; /* Color amarillo retro al hacer hover */
-  transform: translateX(5px);
+  color: var(--accent-tertiary);
+  transform: translateX(15px);
+}
+
+.footer-links a:hover::before {
+  transform: translateX(15px);
 }
 
 .footer-social {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .social-btn {
@@ -72,47 +88,67 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  margin: 0 8px 8px 0;
-  border: 2px solid var(--borde-principal);
-  background-color: #4B5563; /* Gris para los botones sociales */
-  color: white;
+  border: 2px solid var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
   transition: all 0.3s;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%);
+  transition: transform 0.3s;
+  transform: translateX(-100%);
+}
+
+.social-btn:hover::after {
+  transform: translateX(0);
 }
 
 .social-btn:hover {
-  background-color: #10B981; /* Verde al hacer hover */
+  background-color: var(--primary-dark);
   transform: translateY(-3px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-  border-color: #FFFFE0; /* Borde amarillo retro al hover */
+  border-color: var(--accent-tertiary);
 }
 
 .footer-columna p {
   margin: 10px 0;
-  color: #E5E7EB; /* Gris claro para el texto */
+  color: var(--text-light);
+  opacity: 0.9;
+  line-height: 1.6;
 }
 
 .footer-columna p i {
   width: 16px;
   margin-right: 8px;
-  color: #10B981; /* Iconos en verde */
+  color: var(--accent-secondary);
 }
 
 .firma-container {
   text-align: center;
   margin-top: 30px;
   padding-top: 20px;
-  border-top: 2px dashed #4B5563; /* Borde punteado gris */
+  border-top: 2px dashed rgba(255, 255, 255, 0.1);
 }
 
 .firma-container p {
   margin: 5px 0;
   font-size: 14px;
-  color: #D1D5DB; /* Gris claro para la firma */
+  color: var(--text-light);
+  opacity: 0.8;
 }
 
 .firma-container .fa-heart {
-  color: #ff5252;
+  color: var(--accent-color);
   animation: latido 1.5s infinite;
 }
 
@@ -123,7 +159,7 @@
 }
 
 .firma-link {
-  color: #10B981; /* Verde para los enlaces */
+  color: var(--accent-secondary);
   text-decoration: none;
   transition: all 0.3s;
   font-weight: bold;
@@ -133,8 +169,8 @@
 }
 
 .firma-link:hover {
-  color: #FFFFE0; /* Amarillo retro al hover */
-  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+  color: var(--accent-tertiary);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
 }
 
 .yeyobitz-firma {
@@ -146,12 +182,14 @@
   font-family: 'Press Start 2P', cursive;
   font-size: 14px;
   letter-spacing: 1px;
+  color: var(--primary-light);
 }
 
 .copyright {
   font-size: 12px !important;
   margin-top: 10px !important;
-  color: #9CA3AF !important; /* Gris medio para el copyright */
+  color: var(--text-light) !important;
+  opacity: 0.6 !important;
 }
 
 .volver-arriba-container {
@@ -166,18 +204,20 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #10B981; /* Verde para el botón de volver arriba */
-  color: white;
-  border: 3px solid #FFFFE0; /* Borde amarillo retro */
+  background-color: var(--accent-color);
+  color: var(--text-light);
+  border: 3px solid var(--primary-color);
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
   transition: all 0.3s;
   text-decoration: none;
+  font-size: 18px;
 }
 
 .boton-volver-arriba:hover {
   transform: translateY(-5px);
   box-shadow: 3px 8px 0px rgba(0, 0, 0, 0.4);
-  background-color: #047857; /* Verde más oscuro al hover */
+  background-color: var(--primary-color);
+  border-color: var(--accent-tertiary);
 }
 
 /* Responsive */

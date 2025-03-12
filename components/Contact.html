@@ -1,46 +1,139 @@
 <!-- Componente: Contact (Sección de contacto) -->
-<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
-  <div class="w3-row">
-    <div class="w3-col m5">
-      <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar titulo-pixel">Contacto</span></div>
-      <h3>Dirección</h3>
-      <p>Algún lugar del mundo.</p>
-      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;Ciudad, País</p>
-      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;+00 1515151515</p>
-      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;contacto@blogfiction.cl</p>
-    </div>
-    <div class="w3-col m7">
-      <div class="w3-row">
-        <div class="w3-col m6 w3-padding">
-          <div class="w3-card w3-white pixel-corners">
-            <img src="./img/snow.jpg" alt="Snow" style="width:100%">
-            <div class="w3-container">
-              <h3>Horarios</h3>
-              <h4>según servicio</h4>
-              <p>Blablabla</p>
-              <p>Blablabla</p>
-              <p>Blablabla</p>
-              <p>Blablabla</p>
+<div class="w3-container w3-padding-64" id="contact-section">
+  <div class="contact-wrapper pixel-border">
+    <div class="w3-content" style="max-width:1100px">
+      <!-- Título principal con efecto neón -->
+      <div class="section-title-container">
+        <h2 class="section-title titulo-pixel">Contacto</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <!-- Contenido principal -->
+      <div class="contact-content">
+        <!-- Sección superior: Información de contacto -->
+        <div class="contact-info-container pixel-corners glow-on-hover">
+          <h3 class="contact-subtitle">¿Conversemos?</h3>
+          <p class="contact-intro">Estamos listos para responder tus consultas y comenzar a trabajar juntos en tu próximo proyecto.</p>
+          
+          <div class="contact-info-grid">
+            <div class="contact-info-item">
+              <div class="contact-icon-wrapper">
+                <i class="fa fa-map-marker contact-icon"></i>
+              </div>
+              <div class="contact-text">
+                <strong>Dirección</strong>
+                <p>Santiago, Chile</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-icon-wrapper">
+                <i class="fa fa-phone contact-icon"></i>
+              </div>
+              <div class="contact-text">
+                <strong>Teléfono</strong>
+                <p>+56 9 1515 1515</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-icon-wrapper">
+                <i class="fa fa-envelope-o contact-icon"></i>
+              </div>
+              <div class="contact-text">
+                <strong>Email</strong>
+                <p>contacto@blogfiction.cl</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-icon-wrapper">
+                <i class="fa fa-clock-o contact-icon"></i>
+              </div>
+              <div class="contact-text">
+                <strong>Horario de Atención</strong>
+                <p>Lunes a Viernes: 9:00 - 18:00</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Botones de redes sociales con efecto mejorado -->
+          <div class="contact-social">
+            <a href="#" class="social-icon-btn" aria-label="Facebook">
+              <i class="fa fa-facebook"></i>
+              <span class="social-hover-effect"></span>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="social-hover-effect"></span>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Instagram">
+              <i class="fa fa-instagram"></i>
+              <span class="social-hover-effect"></span>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="social-hover-effect"></span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Sección media: Tarjetas de información -->
+        <div class="contact-cards-container">
+          <div class="contact-cards">
+            <div class="contact-card pixel-corners retro-card">
+              <div class="contact-card-icon">
+                <i class="fa fa-calendar"></i>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Horarios</h3>
+                <h4 class="card-subtitle">Servicios a la medida</h4>
+                <p>Contamos con flexibilidad horaria según el tipo de servicio requerido.</p>
+                <p>Agenda una reunión virtual o presencial.</p>
+              </div>
+            </div>
+            
+            <div class="contact-card pixel-corners retro-card">
+              <div class="contact-card-icon">
+                <i class="fa fa-building"></i>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Oficinas</h3>
+                <h4 class="card-subtitle">Coworks y espacios</h4>
+                <p>Trabajamos desde diversos espacios colaborativos en Santiago.</p>
+                <p>¡Coordina una visita para conocernos!</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="w3-col m6 w3-padding">
-          <div class="w3-card w3-white pixel-corners">
-            <img src="./img/snow.jpg" alt="Snow" style="width:100%">
-            <div class="w3-container">
-              <h3>Lugares</h3>
-              <h4>Coworks y oficinas</h4>
-              <p>Blablabla</p>
-              <p>Blablabla</p>
-              <p>Blablabla</p>
-              <p>Blablabla</p>
+        
+        <!-- Sección inferior: Mapa de Google -->
+        <div class="google-map-container pixel-corners retro-card">
+          <div class="map-title-container">
+            <h3 class="contact-subtitle">Nuestra Ubicación</h3>
+          </div>
+          <div class="google-map-wrapper">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106554.75866923626!2d-70.7068181765625!3d-33.43769500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5410425af2f%3A0x8475d53c400f0931!2sSantiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1648597042007!5m2!1ses-419!2scl" 
+              width="100%" 
+              height="450" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              class="google-map-iframe pixel-corners">
+            </iframe>
+            <div class="map-overlay"></div>
+          </div>
+          <div class="map-overlay-info">
+            <div class="map-info-box pixel-corners">
+              <i class="fa fa-map-marker"></i>
+              <span>Santiago, Chile</span>
+              <a href="https://goo.gl/maps/YourLocation" target="_blank" class="btn-pixel btn-map">CÓMO LLEGAR</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- Image of location/map -->
-<img src="./img/map.jpg" class="w3-image w3-greyscale-min pixel-corners" style="width:100%;"> 
+</div> 

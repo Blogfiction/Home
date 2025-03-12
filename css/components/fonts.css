@@ -1,0 +1,13 @@
+/* Importar la fuente Space Mono desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Aplicar Space Mono como fuente principal para todo el texto normal */
+body, p, span, div, li, a, input, button, textarea, label, blockquote, cite, code, pre, address, th, td {
+    font-family: 'Space Mono', monospace !important;
+}
+
+/* Mantener la fuente original para los títulos si es necesario */
+/* Si quieres cambiar también los títulos, elimina o comenta la siguiente regla */
+/* h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Mono', monospace !important;
+} */ 

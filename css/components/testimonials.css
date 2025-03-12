@@ -46,7 +46,7 @@
 /* Carrusel de testimonios */
 .testimonials-carousel {
   display: flex;
-  margin: 0 auto 30px;
+  margin: 10px auto 30px;
   position: relative;
   z-index: 1;
   transition: transform 0.5s ease-in-out;

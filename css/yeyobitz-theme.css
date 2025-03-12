@@ -362,6 +362,48 @@ h4, h5, h6 {
 .w3-theme-l5 {
   color: var(--texto-principal) !important;
   background-color: var(--fondo-tarjetas-pasadas) !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para la sección de contacto */
+#contact .w3-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 15px;
+  height: 100%;
+}
+
+#contact .w3-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#contact .w3-container h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  margin-top: 15px;
+  color: var(--titulo-principal);
+}
+
+#contact .w3-container h4 {
+  font-size: 16px;
+  margin-top: 5px;
+  color: var(--titulo-secundario);
+}
+
+#contact .w3-text-teal {
+  color: var(--acento-principal) !important;
+}
+
+@media (max-width: 768px) {
+  #contact .w3-col.m6 {
+    width: 100%;
+  }
+  
+  #contact .w3-col.m5,
+  #contact .w3-col.m7 {
+    width: 100%;
+  }
 }
 
 /* Botones en la sección de servicios */

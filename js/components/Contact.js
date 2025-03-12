@@ -92,9 +92,14 @@ class ContactComponent {
 
   // Inicializar el mapa de Google (si es necesario configurar algo específico)
   initMap() {
-    // Aquí iría cualquier configuración adicional para el mapa de Google
-    // Ejemplo: zoom, marcadores, etc.
-    console.log('Mapa de Google inicializado');
+    // Configuración para el mapa de Google Maps
+    console.log('Mapa de Google inicializado con dirección: O\'higgins 680, Concepción, Bio-bio');
+    
+    // Asegurar que el enlace de "Cómo llegar" sea correcto
+    const mapLink = document.querySelector('.btn-map');
+    if (mapLink) {
+      mapLink.href = "https://goo.gl/maps/oCvvQJhUhM282fvR9";
+    }
   }
 
   // Crear y mostrar una notificación

@@ -1,0 +1,458 @@
+<!-- Componente: Team (Sección de equipo con organigrama) -->
+<div class="w3-container w3-padding-64 w3-center seccion-principal" id="team">
+    <h2 class="titulo-pixel">NUESTRO EQUIPO</h2>        
+    <div class="organigrama">
+        <!-- Nivel 1: Dirección Ejecutiva -->
+        <div class="organigrama-nivel organigrama-nivel-principal">
+            <div class="organigrama-caja direccion pixel-corners" onclick="document.getElementById('modal-direccion').style.display='block'">
+                <h3>DIRECCIÓN EJECUTIVA</h3>
+                <p>Administración de la empresa</p>
+            </div>
+        </div>
+        
+        <div class="organigrama-linea-vertical"></div>
+        
+        <!-- Línea horizontal que conecta las dos ramas principales -->
+        <div class="organigrama-linea-horizontal organigrama-linea-principal"></div>
+        
+        <!-- Nivel 2: División principal -->
+        <div class="organigrama-division">
+            <!-- Sección Izquierda: Desarrollo y Producción -->
+            <div class="organigrama-seccion">
+                <div class="organigrama-caja desarrollo pixel-corners" onclick="document.getElementById('modal-desarrollo').style.display='block'">
+                    <h3>DESARROLLO Y PRODUCCIÓN</h3>
+                </div>
+                
+                <div class="organigrama-linea-vertical"></div>
+                <div class="organigrama-linea-horizontal organigrama-linea-secundaria"></div>
+                
+                <!-- Subdivisión de Desarrollo y Producción -->
+                <div class="organigrama-nivel">
+                  
+                    <div class="organigrama-subseccion">
+                      
+                        <div class="organigrama-caja departamento pixel-corners">
+                            <h3>PRODUCTOS</h3>
+                        </div>
+                        
+                        <div class="organigrama-linea-vertical"></div>
+                        
+                        <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-diseno').style.display='block'">
+                            <h3>DISEÑO DE PRODUCTOS</h3>
+                            <p>Equipo de diseño y desarrollo de productos de la marca</p>
+                        </div>
+                    </div>
+                    
+                    <div class="organigrama-subseccion">
+                        <div class="organigrama-caja departamento pixel-corners">
+                            <h3>SERVICIOS</h3>
+                        </div>
+                        
+                        <div class="organigrama-linea-vertical"></div>
+                        
+                        <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-talleres').style.display='block'">
+                            <h3>TALLERES Y ACTIVIDADES</h3>
+                            <p>Charlas, actividades, torneos, ludotecas y demostraciones</p>
+                        </div>
+                        
+                        <div class="organigrama-linea-vertical"></div>
+                        
+                        <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-desarrollo-digital').style.display='block'">
+                            <h3>DESARROLLO DIGITAL</h3>
+                            <p>Desarrollo de sistemas APP y web como soluciones del rubro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección Derecha: Finanzas y Marketing -->
+            <div class="organigrama-seccion">
+                <div class="organigrama-caja finanzas pixel-corners" onclick="document.getElementById('modal-finanzas').style.display='block'">
+                    <h3>FINANZAS Y MKTN</h3>
+                </div>
+                
+                <div class="organigrama-linea-vertical"></div>
+                
+                <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-ventas').style.display='block'">
+                    <h3>EQUIPO DE VENTAS</h3>
+                    <p>Ventas y difusión digital</p>
+                </div>
+                
+                <div class="organigrama-linea-vertical"></div>
+                
+                <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-contabilidad').style.display='block'">
+                    <h3>CONTABILIDAD</h3>
+                    <p>Contabilidad</p>
+                </div>
+                
+                <div class="organigrama-linea-vertical"></div>
+                
+                <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-rrhh').style.display='block'">
+                    <h3>RECURSOS HUMANOS</h3>
+                    <p>Contratación y selección de personal</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Leyenda del organigrama -->
+        <div class="w3-row-padding w3-center w3-margin-top">
+            <div class="w3-col s12">
+                <p class="w3-small w3-text-grey">* Haz clic en cada área para conocer a nuestro equipo</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección de Practicantes -->
+    <div class="practicantes-seccion">
+        <h3 class="titulo-pixel subtitulo-pixel">NUESTROS PRACTICANTES</h3>
+        <p class="practicantes-descripcion">El equipo de talento emergente que está forjando el futuro de nuestra empresa</p>
+        
+        <div class="practicantes-container">
+            <!-- Tarjeta 1 -->
+            <div class="tarjeta-practicante pixel-corners">
+                <div class="practicante-foto-container">
+                    <div class="practicante-foto">
+                        <img src="./img/avatar.jpg" alt="María Polo">
+                    </div>
+                </div>
+                <h4 class="practicante-nombre">María Polo</h4>
+                <p class="practicante-cargo">System Engineer</p>
+                <p class="practicante-descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptatum!</p>
+                <button class="practicante-contacto pixel-corners">Contacto</button>
+            </div>
+            
+            <!-- Tarjeta 2 -->
+            <div class="tarjeta-practicante pixel-corners">
+                <div class="practicante-foto-container">
+                    <div class="practicante-foto">
+                        <img src="./img/avatar.jpg" alt="Fanny Caceres">
+                    </div>
+                </div>
+                <h4 class="practicante-nombre">Fanny Caceres</h4>
+                <p class="practicante-cargo">English Teacher</p>
+                <p class="practicante-descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptatum!</p>
+                <button class="practicante-contacto pixel-corners">Contacto</button>
+            </div>
+            
+            <!-- Tarjeta 3 -->
+            <div class="tarjeta-practicante pixel-corners">
+                <div class="practicante-foto-container">
+                    <div class="practicante-foto">
+                        <img src="./img/avatar.jpg" alt="Joe Smith">
+                    </div>
+                </div>
+                <h4 class="practicante-nombre">Joe Smith</h4>
+                <p class="practicante-cargo">System Engineer</p>
+                <p class="practicante-descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptatum!</p>
+                <button class="practicante-contacto pixel-corners">Contacto</button>
+            </div>
+            
+            <!-- Tarjeta 4 -->
+            <div class="tarjeta-practicante pixel-corners">
+                <div class="practicante-foto-container">
+                    <div class="practicante-foto">
+                        <img src="./img/avatar.jpg" alt="Ana Romero">
+                    </div>
+                </div>
+                <h4 class="practicante-nombre">Ana Romero</h4>
+                <p class="practicante-cargo">UX Designer</p>
+                <p class="practicante-descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptatum!</p>
+                <button class="practicante-contacto pixel-corners">Contacto</button>
+            </div>
+            
+            <!-- Tarjeta 5 -->
+            <div class="tarjeta-practicante pixel-corners">
+                <div class="practicante-foto-container">
+                    <div class="practicante-foto">
+                        <img src="./img/avatar.jpg" alt="Carlos Díaz">
+                    </div>
+                </div>
+                <h4 class="practicante-nombre">Carlos Díaz</h4>
+                <p class="practicante-cargo">Frontend Developer</p>
+                <p class="practicante-descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptatum!</p>
+                <button class="practicante-contacto pixel-corners">Contacto</button>
+            </div>
+            
+            <!-- Tarjeta 6 -->
+            <div class="tarjeta-practicante pixel-corners">
+                <div class="practicante-foto-container">
+                    <div class="practicante-foto">
+                        <img src="./img/avatar.jpg" alt="Lucía Vega">
+                    </div>
+                </div>
+                <h4 class="practicante-nombre">Lucía Vega</h4>
+                <p class="practicante-cargo">Game Developer</p>
+                <p class="practicante-descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptatum!</p>
+                <button class="practicante-contacto pixel-corners">Contacto</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modales para cada posición del organigrama -->
+<!-- Modal Dirección Ejecutiva -->
+<div id="modal-direccion" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-direccion').style.display='none'">X</div>
+        <h3 class="modal-titulo">Juan Pérez</h3>
+        <img src="./img/avatar.jpg" alt="Director Ejecutivo" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Director Ejecutivo</div>
+        <p class="modal-descripcion">Responsable de la administración general de la empresa y la toma de decisiones estratégicas.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> juan.perez@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 1234 5678</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Desarrollo y Producción -->
+<div id="modal-desarrollo" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-desarrollo').style.display='none'">X</div>
+        <h3 class="modal-titulo">María González</h3>
+        <img src="./img/avatar.jpg" alt="Gerente de Desarrollo" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Gerente de Desarrollo y Producción</div>
+        <p class="modal-descripcion">Coordina todos los procesos de desarrollo de productos y servicios de la empresa.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> maria.gonzalez@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 8765 4321</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Productos -->
+<div id="modal-productos" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-productos').style.display='none'">X</div>
+        <h3 class="modal-titulo">Carlos Ramírez</h3>
+        <img src="./img/avatar.jpg" alt="Jefe de Productos" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Jefe de Productos</div>
+        <p class="modal-descripcion">Responsable de la gestión y desarrollo de la línea de productos de la empresa.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> carlos.ramirez@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 5555 6666</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Diseño de Productos -->
+<div id="modal-diseno" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-diseno').style.display='none'">X</div>
+        <h3 class="modal-titulo">Sofía Martínez</h3>
+        <img src="./img/avatar.jpg" alt="Diseñador de Productos" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Diseñadora Principal</div>
+        <p class="modal-descripcion">Lidera el equipo de diseño y desarrollo de productos de la marca.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> sofia.martinez@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 4444 3333</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Servicios -->
+<div id="modal-servicios" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-servicios').style.display='none'">X</div>
+        <h3 class="modal-titulo">Roberto Soto</h3>
+        <img src="./img/avatar.jpg" alt="Jefe de Servicios" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Jefe de Servicios</div>
+        <p class="modal-descripcion">Coordina todos los servicios ofrecidos por la empresa a clientes y usuarios.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> roberto.soto@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 2222 3333</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Talleres y Actividades -->
+<div id="modal-talleres" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-talleres').style.display='none'">X</div>
+        <h3 class="modal-titulo">Camila Torres</h3>
+        <img src="./img/avatar.jpg" alt="Coordinador de Talleres" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Coordinadora de Talleres</div>
+        <p class="modal-descripcion">Organiza charlas, actividades, torneos, ludotecas y demostraciones para los clientes.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> camila.torres@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 3333 4444</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Desarrollo Digital -->
+<div id="modal-desarrollo-digital" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-desarrollo-digital').style.display='none'">X</div>
+        <h3 class="modal-titulo">Diego Morales</h3>
+        <img src="./img/avatar.jpg" alt="Desarrollador Digital" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Jefe de Desarrollo Digital</div>
+        <p class="modal-descripcion">Lidera el desarrollo de sistemas APP y web como soluciones del rubro.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> diego.morales@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 7777 8888</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Finanzas y Marketing -->
+<div id="modal-finanzas" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-finanzas').style.display='none'">X</div>
+        <h3 class="modal-titulo">Andrés Silva</h3>
+        <img src="./img/avatar.jpg" alt="Director Financiero" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Director Financiero y de Marketing</div>
+        <p class="modal-descripcion">Supervisa las operaciones financieras y estrategias de marketing de la empresa.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> andres.silva@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 5555 1111</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Equipo de Ventas -->
+<div id="modal-ventas" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-ventas').style.display='none'">X</div>
+        <h3 class="modal-titulo">Valentina Rojas</h3>
+        <img src="./img/avatar.jpg" alt="Gerente de Ventas" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Gerente de Ventas</div>
+        <p class="modal-descripcion">Responsable de las ventas y estrategias de difusión digital.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> valentina.rojas@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 6666 9999</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Contabilidad -->
+<div id="modal-contabilidad" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-contabilidad').style.display='none'">X</div>
+        <h3 class="modal-titulo">Javier Mendoza</h3>
+        <img src="./img/avatar.jpg" alt="Contador" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Contador Principal</div>
+        <p class="modal-descripcion">Encargado de la gestión contable y financiera de la empresa.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> javier.mendoza@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 4444 5555</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Recursos Humanos -->
+<div id="modal-rrhh" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-rrhh').style.display='none'">X</div>
+        <h3 class="modal-titulo">Laura Vargas</h3>
+        <img src="./img/avatar.jpg" alt="Jefe de RRHH" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Jefa de Recursos Humanos</div>
+        <p class="modal-descripcion">Responsable de la contratación y selección de personal.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> laura.vargas@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 1111 2222</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modales para los practicantes -->
+<div id="modal-practicante-1" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-practicante-1').style.display='none'">X</div>
+        <h3 class="modal-titulo">María Polo</h3>
+        <img src="./img/avatar.jpg" alt="María Polo" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">System Engineer</div>
+        <p class="modal-descripcion">Estudiante de último año especializada en desarrollo de sistemas y optimización de procesos.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> maria.polo@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 8888 1111</p>
+        </div>
+    </div>
+</div>
+
+<div id="modal-practicante-2" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-practicante-2').style.display='none'">X</div>
+        <h3 class="modal-titulo">Fanny Caceres</h3>
+        <img src="./img/avatar.jpg" alt="Fanny Caceres" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">English Teacher</div>
+        <p class="modal-descripcion">Especialista en enseñanza del inglés aplicado a contextos técnicos y de negocios.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> fanny.caceres@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 7777 2222</p>
+        </div>
+    </div>
+</div>
+
+<div id="modal-practicante-3" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-practicante-3').style.display='none'">X</div>
+        <h3 class="modal-titulo">Joe Smith</h3>
+        <img src="./img/avatar.jpg" alt="Joe Smith" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">System Engineer</div>
+        <p class="modal-descripcion">Especializado en desarrollo de soluciones cloud y arquitectura de sistemas.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> joe.smith@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 6666 3333</p>
+        </div>
+    </div>
+</div>
+
+<div id="modal-practicante-4" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-practicante-4').style.display='none'">X</div>
+        <h3 class="modal-titulo">Ana Romero</h3>
+        <img src="./img/avatar.jpg" alt="Ana Romero" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">UX Designer</div>
+        <p class="modal-descripcion">Diseñadora de experiencias de usuario enfocada en interfaces de juegos y aplicaciones.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> ana.romero@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 5555 4444</p>
+        </div>
+    </div>
+</div>
+
+<div id="modal-practicante-5" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-practicante-5').style.display='none'">X</div>
+        <h3 class="modal-titulo">Carlos Díaz</h3>
+        <img src="./img/avatar.jpg" alt="Carlos Díaz" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Frontend Developer</div>
+        <p class="modal-descripcion">Desarrollador frontend con habilidades en diseño de interfaces y experiencia de usuario.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> carlos.diaz@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 4444 5656</p>
+        </div>
+    </div>
+</div>
+
+<div id="modal-practicante-6" class="w3-modal">
+    <div class="w3-modal-content modal-videojuego pixel-corners">
+        <div class="modal-cerrar-movil" onclick="document.getElementById('modal-practicante-6').style.display='none'">X</div>
+        <h3 class="modal-titulo">Lucía Vega</h3>
+        <img src="./img/avatar.jpg" alt="Lucía Vega" class="modal-imagen">
+        <div class="modal-cargo pixel-corners">Game Developer</div>
+        <p class="modal-descripcion">Desarrolladora de videojuegos con experiencia en Unity y diseño de niveles.</p>
+        
+        <div class="modal-contacto">
+            <p><i class="fa fa-envelope w3-text-teal"></i> lucia.vega@blogfiction.cl</p>
+            <p><i class="fa fa-phone w3-text-teal"></i> +56 9 3333 6767</p>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,69 @@
+/* Estilos para el componente Hero */
+
+.w3-display-container {
+  position: relative;
+  margin-top: 50px; /* Espacio para la barra de navegación */
+}
+
+.w3-display-container img {
+  margin-top: 10px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 2s ease;
+}
+
+.w3-display-container:hover img {
+  transform: scale(1.02);
+}
+
+.w3-display-bottomleft {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+.w3-button.w3-theme.w3-hover-teal {
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+  animation: pulse-button 2s infinite;
+  transition: all 0.3s ease;
+  padding: 14px 20px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.w3-button.w3-theme.w3-hover-teal:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 7px 0px rgba(0, 0, 0, 0.3);
+  background-color: var(--acento-secundario) !important;
+}
+
+.w3-button.w3-theme.w3-hover-teal:active {
+  transform: translateY(0);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Efectos de animación */
+@keyframes pulse-button {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .w3-display-container img {
+    min-height: 250px;
+  }
+  
+  .w3-button.w3-theme.w3-hover-teal {
+    font-size: 14px !important;
+    padding: 10px 16px;
+  }
+} 

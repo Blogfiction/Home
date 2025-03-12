@@ -1,0 +1,202 @@
+/* Estilos para el componente Footer */
+
+.yeyobitz-footer {
+  background-color: #1F2937; /* Fondo oscuro para el footer */
+  border-top: 4px solid var(--acento-primario);
+  position: relative;
+  padding-bottom: 80px !important;
+  color: #FFFFFF; /* Texto blanco para mejor contraste */
+}
+
+.footer-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.footer-columna {
+  flex: 1;
+  min-width: 250px;
+  margin: 15px;
+  position: relative;
+}
+
+.footer-titulo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  color: #FFFFFF; /* Asegurar que el título sea blanco */
+}
+
+.footer-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #10B981; /* Color verde para el subrayado */
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links a {
+  margin: 5px 0;
+  color: #E5E7EB; /* Gris claro para enlaces en reposo */
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+  display: inline-block;
+  padding: 3px 0;
+}
+
+.footer-links a:hover {
+  color: #FFFFE0; /* Color amarillo retro al hacer hover */
+  transform: translateX(5px);
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 0 8px 8px 0;
+  border: 2px solid var(--borde-principal);
+  background-color: #4B5563; /* Gris para los botones sociales */
+  color: white;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  background-color: #10B981; /* Verde al hacer hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  border-color: #FFFFE0; /* Borde amarillo retro al hover */
+}
+
+.footer-columna p {
+  margin: 10px 0;
+  color: #E5E7EB; /* Gris claro para el texto */
+}
+
+.footer-columna p i {
+  width: 16px;
+  margin-right: 8px;
+  color: #10B981; /* Iconos en verde */
+}
+
+.firma-container {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px dashed #4B5563; /* Borde punteado gris */
+}
+
+.firma-container p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #D1D5DB; /* Gris claro para la firma */
+}
+
+.firma-container .fa-heart {
+  color: #ff5252;
+  animation: latido 1.5s infinite;
+}
+
+@keyframes latido {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.firma-link {
+  color: #10B981; /* Verde para los enlaces */
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: bold;
+  position: relative;
+  padding: 0 3px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.firma-link:hover {
+  color: #FFFFE0; /* Amarillo retro al hover */
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+}
+
+.yeyobitz-firma {
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding: 0 4px;
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.copyright {
+  font-size: 12px !important;
+  margin-top: 10px !important;
+  color: #9CA3AF !important; /* Gris medio para el copyright */
+}
+
+.volver-arriba-container {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.boton-volver-arriba {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #10B981; /* Verde para el botón de volver arriba */
+  color: white;
+  border: 3px solid #FFFFE0; /* Borde amarillo retro */
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.boton-volver-arriba:hover {
+  transform: translateY(-5px);
+  box-shadow: 3px 8px 0px rgba(0, 0, 0, 0.4);
+  background-color: #047857; /* Verde más oscuro al hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-contenido {
+    flex-direction: column;
+  }
+  
+  .footer-columna {
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  .footer-titulo {
+    font-size: 14px;
+  }
+  
+  .volver-arriba-container {
+    right: 10px;
+    bottom: 10px;
+  }
+} 

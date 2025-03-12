@@ -1,0 +1,493 @@
+/* Estilos para el componente Work (sección de trabajos) */
+
+/* Variables para categorías - Las definimos aquí para asegurar disponibilidad */
+/* Estas variables son utilizadas para los colores de las etiquetas de categorías */
+:root {
+  /* Variables para categoría juego (si ya están definidas en otro sitio) */
+  --juego-fondo: var(--juego-fondo, #4CAF50);
+  --juego-texto: var(--juego-texto, #FFFFFF);
+  --juego-borde: var(--juego-borde, #388E3C);
+  
+  /* Variables para categoría tienda (si ya están definidas en otro sitio) */
+  --tienda-fondo: var(--tienda-fondo, #FF9800);
+  --tienda-texto: var(--tienda-texto, #FFFFFF);
+  --tienda-borde: var(--tienda-borde, #F57C00);
+  
+  /* Variables para categoría web */
+  --web-fondo: #3498db;
+  --web-texto: #ffffff;
+  --web-borde: #2980b9;
+  
+  /* Variables para categoría design */
+  --design-fondo: #9b59b6;
+  --design-texto: #ffffff;
+  --design-borde: #8e44ad;
+}
+
+/* Estructura principal */
+.work-section {
+  color: var(--texto-principal);
+  background-color: var(--fondo-principal);
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.03)"/></svg>');
+  pointer-events: none;
+  z-index: 1;
+}
+
+.work-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Encabezado de sección */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2.titulo-pixel {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 28px;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  position: relative;
+  letter-spacing: 1px;
+  color: var(--acento-primario);
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+
+.subheader-line {
+  height: 4px;
+  width: 80px;
+  background-color: var(--acento-primario);
+  margin: 15px auto 0;
+}
+
+/* Texto introductorio */
+.work-intro {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.work-intro p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: var(--texto-principal);
+}
+
+/* Grid de proyectos */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* Tarjetas de trabajo */
+.work-card {
+  background-color: var(--fondo-secundario);
+  border: 3px solid var(--borde-principal);
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: translateZ(0); /* Para optimizar el rendimiento */
+  will-change: transform; /* Para optimizar el rendimiento */
+  opacity: 1; /* Asegurar que las tarjetas sean visibles por defecto */
+  animation: cardAppear 0.6s ease forwards;
+}
+
+/* Animación para la aparición de tarjetas */
+@keyframes cardAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.work-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 8px 12px 0 rgba(0,0,0,0.15);
+}
+
+.work-card-image {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--borde-principal);
+  aspect-ratio: 16/9;
+}
+
+.work-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.work-card:hover .work-card-image img {
+  transform: scale(1.08);
+}
+
+.work-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-card:hover .work-overlay {
+  opacity: 1;
+}
+
+.view-project-btn {
+  padding: 8px 15px;
+  background-color: var(--acento-primario);
+  color: #FFFFFF;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.work-card:hover .view-project-btn {
+  transform: translateY(0);
+}
+
+.view-project-btn:hover {
+  background-color: var(--acento-secundario);
+  border-color: var(--acento-primario);
+}
+
+/* Contenido de tarjeta */
+.work-card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.work-card-content h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: var(--acento-primario);
+}
+
+.work-card-content h4 {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: var(--acento-secundario);
+}
+
+.work-card-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+/* Etiquetas */
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: auto;
+}
+
+.w3-tag {
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.tag-juego {
+  background-color: var(--juego-fondo);
+  color: var(--juego-texto);
+  border: 2px solid var(--juego-borde);
+}
+
+.tag-tienda {
+  background-color: var(--tienda-fondo);
+  color: var(--tienda-texto);
+  border: 2px solid var(--tienda-borde);
+}
+
+.tag-web {
+  background-color: var(--web-fondo);
+  color: var(--web-texto);
+  border: 2px solid var(--web-borde);
+}
+
+.tag-design {
+  background-color: var(--design-fondo);
+  color: var(--design-texto);
+  border: 2px solid var(--design-borde);
+}
+
+.w3-tag:hover {
+  transform: translateY(-3px) rotate(-3deg);
+}
+
+/* Modal de proyecto */
+.project-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  overscroll-behavior: contain;
+}
+
+.modal-content {
+  background-color: var(--fondo-secundario);
+  border: 4px solid var(--borde-principal);
+  max-width: 900px;
+  margin: 40px auto;
+  position: relative;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--texto-principal);
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: var(--acento-primario);
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+/* Modal de proyecto - Estilos para el contenido */
+.modal-project {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-project-image {
+  margin-bottom: 25px;
+  overflow: hidden;
+  border: 3px solid var(--borde-principal);
+}
+
+.modal-project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.modal-project-image:hover img {
+  transform: scale(1.05);
+}
+
+.modal-project-info h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: var(--acento-primario);
+}
+
+.modal-project-info h3 {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: var(--acento-secundario);
+}
+
+.modal-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.modal-project-tags .w3-tag {
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
+.modal-project-description {
+  margin-bottom: 25px;
+}
+
+.modal-project-description p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.modal-project-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  background-color: var(--acento-primario);
+  color: #FFFFFF;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 6px 0 rgba(0,0,0,0.2);
+  background-color: var(--acento-secundario);
+  border-color: var(--acento-primario);
+}
+
+/* Optimizaciones adicionales */
+/* Efecto de contenido cargando */
+@keyframes shimmer {
+  0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; }
+}
+
+.work-card-image.loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+  background-size: 800px 104px;
+  animation: shimmer 1.5s infinite linear;
+  z-index: 1;
+}
+
+/* Mejoras para la accesibilidad */
+.view-project-btn:focus,
+.action-btn:focus {
+  outline: 2px solid var(--acento-primario);
+  outline-offset: 2px;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+  .work-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header h2.titulo-pixel {
+    font-size: 22px;
+  }
+  
+  .work-intro p {
+    font-size: 14px;
+  }
+  
+  .work-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  
+  .modal-project {
+    flex-direction: row;
+    gap: 30px;
+  }
+  
+  .modal-project-image {
+    flex: 0 0 45%;
+    margin-bottom: 0;
+  }
+  
+  .modal-project-info {
+    flex: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header h2.titulo-pixel {
+    font-size: 18px;
+  }
+  
+  .modal-project-info h2 {
+    font-size: 18px;
+  }
+  
+  .modal-project-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .modal-content {
+    margin: 20px auto;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+} 

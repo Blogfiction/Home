@@ -1,0 +1,132 @@
+/* Estilos para el componente Services */
+
+#pricing {
+  background-color: var(--fondo-principal);
+  padding: 64px 20px;
+}
+
+#pricing h2.titulo-pixel {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 22px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+#pricing h2.titulo-pixel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--acento-primario);
+}
+
+#pricing p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: var(--texto-principal);
+}
+
+#pricing .w3-ul {
+  border: 4px solid var(--borde-principal) !important;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pricing .w3-ul:hover {
+  transform: translateY(-10px);
+  box-shadow: 6px 16px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+#pricing .w3-ul li {
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#pricing .w3-ul li:first-child {
+  border-bottom: 4px solid var(--borde-principal);
+}
+
+#pricing .w3-theme {
+  background-color: var(--acento-primario) !important;
+  color: white !important;
+}
+
+#pricing .w3-theme-l2 {
+  background-color: var(--acento-secundario) !important;
+  color: white !important;
+}
+
+#pricing .w3-theme-l5 {
+  background-color: var(--fondo-secundario) !important;
+  border-top: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+#pricing .w3-xlarge {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+#pricing .w3-wide {
+  font-family: 'Press Start 2P', cursive;
+  margin: 5px 0;
+  color: var(--acento-primario);
+}
+
+#pricing .w3-opacity {
+  font-size: 14px;
+  color: var(--acento-secundario);
+}
+
+#pricing .w3-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  padding: 12px 16px;
+  background-color: var(--acento-primario) !important;
+  color: white !important;
+  border: 3px solid var(--borde-principal);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+#pricing .w3-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--acento-secundario) !important;
+}
+
+#pricing .w3-button .fa-check {
+  margin-right: 5px;
+}
+
+/* Efectos destacados para el plan central */
+#pricing .w3-third:nth-child(3) .w3-ul {
+  transform: scale(1.05);
+  z-index: 1;
+  position: relative;
+}
+
+#pricing .w3-third:nth-child(3) .w3-ul:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+  #pricing .w3-third {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  #pricing .w3-third:nth-child(3) .w3-ul {
+    transform: scale(1);
+  }
+  
+  #pricing .w3-third:nth-child(3) .w3-ul:hover {
+    transform: translateY(-10px);
+  }
+} 

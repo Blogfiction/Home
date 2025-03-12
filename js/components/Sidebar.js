@@ -7,16 +7,34 @@ function initSidebar() {
   const sidebar = document.getElementById("mySidebar");
   let floatingButton = null;
   
-  // Crear botón flotante para abrir el sidebar si no existe
-  if (!document.querySelector('.sidebar-float-button')) {
-    floatingButton = document.createElement('div');
-    floatingButton.className = 'sidebar-float-button';
-    floatingButton.innerHTML = '<i class="fa fa-bars"></i>';
-    floatingButton.setAttribute('aria-label', 'Abrir menú');
-    document.body.appendChild(floatingButton);
-  } else {
-    floatingButton = document.querySelector('.sidebar-float-button');
+  // Función para verificar si debe mostrar el botón flotante
+  function shouldShowFloatingButton() {
+    return window.innerWidth <= 992; // Mostrar en pantallas de 992px o menos (consistente con CSS)
   }
+  
+  // Función para gestionar el botón flotante
+  function manageFloatingButton() {
+    // Si el botón no existe, crearlo
+    if (!floatingButton) {
+      floatingButton = document.createElement('div');
+      floatingButton.className = 'sidebar-float-button';
+      floatingButton.innerHTML = '<i class="fa fa-bars"></i>';
+      floatingButton.setAttribute('aria-label', 'Abrir menú');
+      document.body.appendChild(floatingButton);
+      
+      // Asignar evento al botón flotante
+      floatingButton.addEventListener('click', function() {
+        if (sidebar && sidebar.style.display === "block") {
+          window.w3_close();
+        } else {
+          window.w3_open();
+        }
+      });
+    }
+  }
+  
+  // Crear botón flotante para abrir el sidebar
+  manageFloatingButton();
   
   // Función para ajustar tamaño del sidebar según el dispositivo
   function adjustSidebarSize() {
@@ -61,7 +79,9 @@ function initSidebar() {
     // Pequeño retraso para asegurar transiciones suaves
     setTimeout(() => {
       sidebar.classList.add('sidebar-open');
-      floatingButton.classList.add('active');
+      if (floatingButton) {
+        floatingButton.classList.add('active');
+      }
       // Agregar clase para impedir el scroll de la página
       document.body.classList.add('sidebar-open-no-scroll');
     }, 10);
@@ -98,19 +118,9 @@ function initSidebar() {
     closeButton.addEventListener('click', window.w3_close);
   }
   
-  // Asignar evento al botón flotante
-  if (floatingButton) {
-    floatingButton.addEventListener('click', function() {
-      if (sidebar.style.display === "block") {
-        window.w3_close();
-      } else {
-        window.w3_open();
-      }
-    });
-  }
-  
   // Ajustar cuando cambia el tamaño de la ventana
   window.addEventListener('resize', function() {
+    // Si el sidebar está abierto, ajustar su tamaño
     if (sidebar && sidebar.style.display === "block") {
       adjustSidebarSize();
     }
@@ -128,7 +138,7 @@ function initSidebar() {
     document.head.appendChild(style);
   }
 
-  console.log('Sidebar component initialized with dynamic sizing and no overlay');
+  console.log('Sidebar component initialized with responsive floating button');
 }
 
 // Exportar la función de inicialización

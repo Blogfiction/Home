@@ -433,7 +433,7 @@
   color: var(--text-light);
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(255, 255, 255, 0.2);
-  display: flex;
+  display: none; /* Oculto por defecto */
   justify-content: center;
   align-items: center;
   z-index: 99990; /* Alto pero por debajo del sidebar */
@@ -441,6 +441,13 @@
   font-size: 24px;
   cursor: pointer;
   border: 3px solid var(--primary-dark);
+}
+
+/* Mostrar el botón flotante solo en dispositivos móviles y tabletas */
+@media (max-width: 992px) {
+  .sidebar-float-button {
+    display: flex;
+  }
 }
 
 .sidebar-float-button:hover {
@@ -476,4 +483,28 @@
 /* Efecto de rotación para el ícono del botón flotante al abrir el sidebar */
 .sidebar-float-button.active i {
   transform: rotate(135deg);
+}
+
+/* Estilo para el botón de menú en versión escritorio */
+.desktop-menu-btn {
+  margin-left: 10px !important;
+  background-color: var(--primary-dark) !important;
+  border-radius: 4px;
+  transition: all 0.3s ease !important;
+}
+
+.desktop-menu-btn i {
+  font-size: 16px;
+}
+
+.desktop-menu-btn:hover {
+  background-color: var(--accent-color) !important;
+  transform: rotate(5deg) !important;
+}
+
+/* Ocultar botón de menú escritorio en pantallas pequeñas */
+@media (max-width: 992px) {
+  .desktop-menu-btn {
+    display: none !important;
+  }
 } 

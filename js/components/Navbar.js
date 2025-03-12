@@ -73,6 +73,12 @@ function initNavbar() {
     });
   });
 
+  // Asignar evento al botón de menú de escritorio
+  const desktopMenuBtn = document.querySelector('.desktop-menu-btn');
+  if (desktopMenuBtn && typeof w3_open === 'function') {
+    desktopMenuBtn.addEventListener('click', w3_open);
+  }
+
   // Animar la entrada de los íconos sociales en fila horizontal
   function animateSocialIcons() {
     const socialIcons = document.querySelectorAll('.nav-social-icon');
@@ -120,7 +126,7 @@ function initNavbar() {
   // Animar íconos sociales al cargar
   animateSocialIcons();
 
-  console.log('Navbar component initialized with enhanced animations');
+  console.log('Navbar component initialized with desktop menu button');
 }
 
 // Exportar la función de inicialización

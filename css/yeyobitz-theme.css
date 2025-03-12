@@ -149,6 +149,148 @@ h4, h5, h6 {
   padding: 16px;
 }
 
+/* Modal estilo videojuego */
+.modal-videojuego {
+  border: 6px solid var(--borde-principal);
+  background-color: var(--fondo-principal);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.4);
+  max-width: 600px;
+  padding: 30px;
+  position: relative;
+  transform: translateY(0);
+  animation: modal-pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 999;
+}
+
+@keyframes modal-pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-videojuego .modal-titulo {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  font-size: 24px;
+  color: var(--acento-primario);
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.modal-videojuego .modal-cargo {
+  font-family: 'Press Start 2P', cursive;
+  display: block;
+  background-color: #0046b8;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  margin: 15px auto;
+  max-width: 80%;
+  text-align: center;
+}
+
+.modal-videojuego .modal-imagen {
+  margin: 0 auto 20px;
+  display: block;
+  border: 5px solid var(--borde-principal);
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.modal-videojuego .modal-descripcion {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-videojuego .modal-contacto {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.modal-videojuego .modal-contacto p {
+  margin: 5px 10px;
+  font-size: 14px;
+}
+
+.modal-cerrar-movil {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  z-index: 10;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  padding: 5px 8px;
+  background-color: #ff3333;
+  border: 3px solid var(--borde-principal);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal-cerrar-movil:hover {
+  background-color: #ff0000;
+  animation-name: pulse-button;
+}
+
+@keyframes pulse-button {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-cerrar-movil {
+    display: block;
+    animation-name: pulse-button;
+  }
+  
+  .modal-videojuego {
+    max-width: 85%;
+    padding: 25px 20px 20px;
+  }
+  
+  .modal-videojuego .modal-titulo {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .modal-videojuego .modal-cargo {
+    font-size: 12px;
+  }
+  
+  .modal-videojuego .modal-descripcion {
+    font-size: 14px;
+  }
+  
+  .modal-videojuego .modal-contacto p {
+    font-size: 12px;
+  }
+}
+
 /* Círculos para imágenes */
 .w3-circle {
   border: 4px solid var(--borde-principal);
@@ -305,4 +447,335 @@ footer .w3-button {
   justify-content: center;
   font-size: 24px;
   padding: 0;
+}
+
+/* Estilos para el organigrama (versión limpia y unificada) */
+.organigrama {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  padding: 0 15px;
+}
+
+.organigrama-nivel {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 8px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.organigrama-caja {
+  background-color: var(--fondo-secundario);
+  border: 4px solid var(--borde-principal);
+  padding: 15px;
+  margin: 0 10px 2px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.organigrama-caja:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
+  background-color: var(--fondo-principal);
+  z-index: 5;
+}
+
+.organigrama-caja:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 65%, rgba(255,255,255,0.3) 70%, transparent 75%);
+  background-size: 200% 200%;
+  animation: shine 1s forwards;
+}
+
+.organigrama-caja h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.organigrama-caja p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Líneas del organigrama */
+.organigrama-linea-vertical {
+  width: 6px;
+  height: 15px;
+  background-color: var(--borde-principal);
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+}
+
+.organigrama-linea-horizontal {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+  max-width: calc(100% - 20px);
+  overflow: visible;
+}
+
+.organigrama-linea-horizontal:before {
+  content: '';
+  height: 6px;
+  background-color: var(--borde-principal);
+  width: 100%;
+  max-width: calc(100% - 20px);
+  margin: 0 auto;
+}
+
+/* Clases específicas para líneas horizontales */
+.organigrama-linea-principal {
+  width: 60%;
+  max-width: 300px;
+}
+
+.organigrama-linea-secundaria {
+  width: 85%;
+  max-width: 250px;
+}
+
+.organigrama-nivel > .organigrama-linea-horizontal {
+  width: 50%;
+  max-width: 300px;
+}
+
+.organigrama-division > .organigrama-linea-horizontal {
+  width: 65%;
+  max-width: 80%;
+}
+
+.organigrama-seccion .organigrama-linea-horizontal {
+  width: 50%;
+  max-width: 180px;
+}
+
+.organigrama-subseccion .organigrama-linea-horizontal {
+  width: 40%;
+  max-width: 120px;
+}
+
+/* Ajustes específicos */
+.organigrama-caja + .organigrama-linea-vertical {
+  margin-top: 2px;
+}
+
+.organigrama-nivel + .organigrama-linea-vertical {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.organigrama-linea-vertical + .organigrama-linea-horizontal {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.organigrama-division {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: relative;
+  margin-top: 0;
+}
+
+.organigrama-nivel-principal {
+  margin-bottom: 5px;
+}
+
+/* Componentes del organigrama */
+.organigrama-seccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48%;
+  position: relative;
+}
+
+.organigrama-subseccion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Estilos específicos para los diferentes tipos de cajas */
+.organigrama-caja.direccion {
+  background-color: #0046b8;
+  color: white;
+  min-width: 250px;
+  padding: 20px;
+  position: relative;
+  border-width: 5px;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.organigrama-caja.direccion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 7px;
+  background: linear-gradient(90deg, #ffd700, #ff6b6b, #ffd700);
+  z-index: 2;
+}
+
+.organigrama-caja.desarrollo,
+.organigrama-caja.finanzas {
+  background-color: #3373e3;
+  color: white;
+  min-width: 220px;
+  border-width: 4px;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.22);
+}
+
+.organigrama-caja.departamento {
+  background-color: var(--acento-secundario);
+  color: white;
+  min-width: 180px;
+  border-width: 3px;
+  cursor: default;
+  opacity: 0.9;
+}
+
+.organigrama-caja.departamento:hover {
+  transform: none;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--acento-secundario);
+}
+
+.organigrama-caja.departamento:hover::after {
+  display: none;
+}
+
+.organigrama-caja.sub-departamento {
+  background-color: #ffd700;
+  color: var(--texto-principal);
+  border-width: 3px;
+  min-width: 180px;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+  .organigrama-caja {
+    min-width: unset !important;
+    padding: 12px;
+    margin: 0 5px;
+  }
+  
+  .organigrama-caja h3 {
+    font-size: 12px;
+  }
+  
+  .organigrama-caja p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .organigrama-division {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .organigrama-seccion {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  
+  .organigrama-seccion:first-child {
+    margin-bottom: 30px;
+  }
+  
+  .organigrama-nivel {
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  .organigrama-caja {
+    margin: 8px 0;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .organigrama-subseccion {
+    margin-bottom: 20px;
+  }
+  
+  .organigrama-linea-horizontal:before {
+    width: 60%;
+    max-width: 120px;
+  }
+  
+  .organigrama-linea-principal {
+    width: 40%;
+    max-width: 150px;
+  }
+  
+  .organigrama-linea-vertical {
+    height: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .organigrama {
+    padding: 0;
+  }
+  
+  .organigrama-caja {
+    max-width: 200px;
+    padding: 10px;
+  }
+  
+  .organigrama-caja h3 {
+    font-size: 11px;
+  }
+  
+  .organigrama-caja p {
+    font-size: 9px;
+  }
+}
+
+/* Estilos para el modal */
+.w3-modal {
+  z-index: 998;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Cuando el modal está abierto, esconder todos los elementos con hover */
+.modal-active .organigrama-caja:hover {
+  transform: none !important;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2) !important;
+  background-color: inherit !important;
+  z-index: 1 !important;
+}
+
+.modal-active .organigrama-caja:hover::after {
+  display: none !important;
+}
+
+.modal-active .organigrama {
+  pointer-events: none;
 } 

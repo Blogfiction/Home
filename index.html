@@ -26,21 +26,22 @@
     <div class="w3-top">
      <div class="w3-bar w3-theme-d2 w3-left-align">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>www.blogfiction.cl</a>
-      <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Equipo</a>
-      <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Trabajos</a>
-      <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Servicios</a>
-      <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contacto</a>
-        <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-button" title="Notifications">Redes Sociales <i class="fa fa-caret-down"></i></button>     
-        <div class="w3-dropdown-content w3-card-4 w3-bar-block pixel-corners">
-          <a href="https://instagram.com/blogfictioncl" class="w3-bar-item w3-button">Instagram </a>
-          <a href="https://www.facebook.com/blogfiction.cl" class="w3-bar-item w3-button">Facebook</a>
-          <a href="https://www.linkedin.com/company/blogfiction/" class="w3-bar-item w3-button">Linkedin</a>
-          <a href="https://wa.me/56981977426" class="w3-bar-item w3-button">Whatsapp</a>
+      <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>blogfiction.cl</a>
+      <div class="w3-right">
+        <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Equipo</a>
+        <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Trabajos</a>
+        <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Servicios</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contacto</a>
+          <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-button" title="Notifications"><i class="fa fa-caret-down"></i> Redes Sociales</button>     
+          <div class="w3-dropdown-content w3-card-4 w3-bar-block pixel-corners">
+            <a href="https://instagram.com/blogfictioncl" class="w3-bar-item w3-button">Instagram </a>
+            <a href="https://www.facebook.com/blogfiction.cl" class="w3-bar-item w3-button">Facebook</a>
+            <a href="https://www.linkedin.com/company/blogfiction/" class="w3-bar-item w3-button">Linkedin</a>
+            <a href="https://wa.me/56981977426" class="w3-bar-item w3-button">Whatsapp</a>
+          </div>
         </div>
       </div>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
      </div>
     
       <!-- Navbar on small screens -->
@@ -81,38 +82,286 @@
     
     <!-- Team Container -->
     <div class="w3-container w3-padding-64 w3-center seccion-principal" id="team">
-    <h2 class="titulo-pixel">NUESTRO EQUIPO</h2>
-    <p>Nuestro staff - Los "Monos chinos"</p>
-    
-    <div class="w3-row"><br>
-    
-    <div class="w3-quarter">
-      <img src="./img/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3>Johnny Walker</h3>
-      <p>Web Designer</p>
+        <h2 class="titulo-pixel">NUESTRO EQUIPO</h2>        
+        <div class="organigrama">
+            <!-- Nivel 1: Dirección Ejecutiva -->
+            <div class="organigrama-nivel organigrama-nivel-principal">
+                <div class="organigrama-caja direccion pixel-corners" onclick="document.getElementById('modal-direccion').style.display='block'">
+                    <h3>DIRECCIÓN EJECUTIVA</h3>
+                    <p>Administración de la empresa</p>
+                </div>
+            </div>
+            
+            <div class="organigrama-linea-vertical"></div>
+            
+            <!-- Línea horizontal que conecta las dos ramas principales -->
+            <div class="organigrama-linea-horizontal organigrama-linea-principal"></div>
+            
+            <!-- Nivel 2: División principal -->
+            <div class="organigrama-division">
+                <!-- Sección Izquierda: Desarrollo y Producción -->
+                <div class="organigrama-seccion">
+                    <div class="organigrama-caja desarrollo pixel-corners" onclick="document.getElementById('modal-desarrollo').style.display='block'">
+                        <h3>DESARROLLO Y PRODUCCIÓN</h3>
+                    </div>
+                    
+                    <div class="organigrama-linea-vertical"></div>
+                    <div class="organigrama-linea-horizontal organigrama-linea-secundaria"></div>
+                    
+                    <!-- Subdivisión de Desarrollo y Producción -->
+                    <div class="organigrama-nivel">
+                      
+                        <div class="organigrama-subseccion">
+                          
+                            <div class="organigrama-caja departamento pixel-corners">
+                                <h3>PRODUCTOS</h3>
+                            </div>
+                            
+                            <div class="organigrama-linea-vertical"></div>
+                            
+                            <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-diseno').style.display='block'">
+                                <h3>DISEÑO DE PRODUCTOS</h3>
+                                <p>Equipo de diseño y desarrollo de productos de la marca</p>
+                            </div>
+                        </div>
+                        
+                        <div class="organigrama-subseccion">
+                            <div class="organigrama-caja departamento pixel-corners">
+                                <h3>SERVICIOS</h3>
+                            </div>
+                            
+                            <div class="organigrama-linea-vertical"></div>
+                            
+                            <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-talleres').style.display='block'">
+                                <h3>TALLERES Y ACTIVIDADES</h3>
+                                <p>Charlas, actividades, torneos, ludotecas y demostraciones</p>
+                            </div>
+                            
+                            <div class="organigrama-linea-vertical"></div>
+                            
+                            <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-desarrollo-digital').style.display='block'">
+                                <h3>DESARROLLO DIGITAL</h3>
+                                <p>Desarrollo de sistemas APP y web como soluciones del rubro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sección Derecha: Finanzas y Marketing -->
+                <div class="organigrama-seccion">
+                    <div class="organigrama-caja finanzas pixel-corners" onclick="document.getElementById('modal-finanzas').style.display='block'">
+                        <h3>FINANZAS Y MKTN</h3>
+                    </div>
+                    
+                    <div class="organigrama-linea-vertical"></div>
+                    
+                    <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-ventas').style.display='block'">
+                        <h3>EQUIPO DE VENTAS</h3>
+                        <p>Ventas y difusión digital</p>
+                    </div>
+                    
+                    <div class="organigrama-linea-vertical"></div>
+                    
+                    <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-contabilidad').style.display='block'">
+                        <h3>CONTABILIDAD</h3>
+                        <p>Contabilidad</p>
+                    </div>
+                    
+                    <div class="organigrama-linea-vertical"></div>
+                    
+                    <div class="organigrama-caja sub-departamento pixel-corners" onclick="document.getElementById('modal-rrhh').style.display='block'">
+                        <h3>RECURSOS HUMANOS</h3>
+                        <p>Contratación y selección de personal</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leyenda del organigrama -->
+            <div class="w3-row-padding w3-center w3-margin-top">
+                <div class="w3-col s12">
+                    <p class="w3-small w3-text-grey">* Haz clic en cada área para conocer a nuestro equipo</p>
+                </div>
+            </div>
+        </div>
     </div>
     
-    <div class="w3-quarter">
-      <img src="./img/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3>Rebecca Flex</h3>
-      <p>Support</p>
+    <!-- Modales para cada posición del organigrama -->
+    <!-- Modal Dirección Ejecutiva -->
+    <div id="modal-direccion" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-direccion').style.display='none'">X</div>
+            <h3 class="modal-titulo">Juan Pérez</h3>
+            <img src="./img/avatar.jpg" alt="Director Ejecutivo" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Director Ejecutivo</div>
+            <p class="modal-descripcion">Responsable de la administración general de la empresa y la toma de decisiones estratégicas.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> juan.perez@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 1234 5678</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Desarrollo y Producción -->
+    <div id="modal-desarrollo" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-desarrollo').style.display='none'">X</div>
+            <h3 class="modal-titulo">María González</h3>
+            <img src="./img/avatar.jpg" alt="Gerente de Desarrollo" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Gerente de Desarrollo y Producción</div>
+            <p class="modal-descripcion">Coordina todos los procesos de desarrollo de productos y servicios de la empresa.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> maria.gonzalez@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 8765 4321</p>
+            </div>
+        </div>
     </div>
     
-    <div class="w3-quarter">
-      <img src="./img/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3>Jan Ringo</h3>
-      <p>Boss man</p>
+    <!-- Modal Productos (restaurado) -->
+    <div id="modal-productos" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-productos').style.display='none'">X</div>
+            <h3 class="modal-titulo">Carlos Ramírez</h3>
+            <img src="./img/avatar.jpg" alt="Jefe de Productos" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Jefe de Productos</div>
+            <p class="modal-descripcion">Responsable de la gestión y desarrollo de la línea de productos de la empresa.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> carlos.ramirez@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 5555 6666</p>
+            </div>
+        </div>
     </div>
-    
-    <div class="w3-quarter">
-      <img src="./img/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3>Kai Ringo</h3>
-      <p>Fixer</p>
+
+    <!-- Modal Diseño de Productos -->
+    <div id="modal-diseno" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-diseno').style.display='none'">X</div>
+            <h3 class="modal-titulo">Sofía Martínez</h3>
+            <img src="./img/avatar.jpg" alt="Diseñador de Productos" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Diseñadora Principal</div>
+            <p class="modal-descripcion">Lidera el equipo de diseño y desarrollo de productos de la marca.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> sofia.martinez@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 4444 3333</p>
+            </div>
+        </div>
     </div>
-    
+
+    <!-- Modal Servicios -->
+    <div id="modal-servicios" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-servicios').style.display='none'">X</div>
+            <h3 class="modal-titulo">Roberto Soto</h3>
+            <img src="./img/avatar.jpg" alt="Jefe de Servicios" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Jefe de Servicios</div>
+            <p class="modal-descripcion">Coordina todos los servicios ofrecidos por la empresa a clientes y usuarios.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> roberto.soto@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 2222 3333</p>
+            </div>
+        </div>
     </div>
+
+    <!-- Modal Talleres y Actividades -->
+    <div id="modal-talleres" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-talleres').style.display='none'">X</div>
+            <h3 class="modal-titulo">Camila Torres</h3>
+            <img src="./img/avatar.jpg" alt="Coordinador de Talleres" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Coordinadora de Talleres</div>
+            <p class="modal-descripcion">Organiza charlas, actividades, torneos, ludotecas y demostraciones para los clientes.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> camila.torres@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 3333 4444</p>
+            </div>
+        </div>
     </div>
-    
+
+    <!-- Modal Desarrollo Digital -->
+    <div id="modal-desarrollo-digital" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-desarrollo-digital').style.display='none'">X</div>
+            <h3 class="modal-titulo">Diego Morales</h3>
+            <img src="./img/avatar.jpg" alt="Desarrollador Digital" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Jefe de Desarrollo Digital</div>
+            <p class="modal-descripcion">Lidera el desarrollo de sistemas APP y web como soluciones del rubro.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> diego.morales@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 7777 8888</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Finanzas y Marketing -->
+    <div id="modal-finanzas" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-finanzas').style.display='none'">X</div>
+            <h3 class="modal-titulo">Andrés Silva</h3>
+            <img src="./img/avatar.jpg" alt="Director Financiero" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Director Financiero y de Marketing</div>
+            <p class="modal-descripcion">Supervisa las operaciones financieras y estrategias de marketing de la empresa.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> andres.silva@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 5555 1111</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Equipo de Ventas -->
+    <div id="modal-ventas" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-ventas').style.display='none'">X</div>
+            <h3 class="modal-titulo">Valentina Rojas</h3>
+            <img src="./img/avatar.jpg" alt="Gerente de Ventas" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Gerente de Ventas</div>
+            <p class="modal-descripcion">Responsable de las ventas y estrategias de difusión digital.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> valentina.rojas@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 6666 9999</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Contabilidad -->
+    <div id="modal-contabilidad" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-contabilidad').style.display='none'">X</div>
+            <h3 class="modal-titulo">Javier Mendoza</h3>
+            <img src="./img/avatar.jpg" alt="Contador" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Contador Principal</div>
+            <p class="modal-descripcion">Encargado de la gestión contable y financiera de la empresa.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> javier.mendoza@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 4444 5555</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Recursos Humanos -->
+    <div id="modal-rrhh" class="w3-modal">
+        <div class="w3-modal-content modal-videojuego pixel-corners">
+            <div class="modal-cerrar-movil" onclick="document.getElementById('modal-rrhh').style.display='none'">X</div>
+            <h3 class="modal-titulo">Laura Vargas</h3>
+            <img src="./img/avatar.jpg" alt="Jefe de RRHH" class="modal-imagen">
+            <div class="modal-cargo pixel-corners">Jefa de Recursos Humanos</div>
+            <p class="modal-descripcion">Responsable de la contratación y selección de personal.</p>
+            
+            <div class="modal-contacto">
+                <p><i class="fa fa-envelope w3-text-teal"></i> laura.vargas@blogfiction.cl</p>
+                <p><i class="fa fa-phone w3-text-teal"></i> +56 9 1111 2222</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Work Row -->
     <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
     
@@ -321,7 +570,59 @@
         x.className = x.className.replace(" w3-show", "");
       }
     }
+
+    // Efectos para el organigrama
+    document.addEventListener('DOMContentLoaded', function() {
+      // Agregar efecto de enfoque al organigrama
+      const organigramaCajas = document.querySelectorAll('.organigrama-caja');
+      
+      organigramaCajas.forEach(caja => {
+        caja.addEventListener('mouseenter', function() {
+          organigramaCajas.forEach(otraCaja => {
+            if (otraCaja !== caja) {
+              otraCaja.style.opacity = '0.7';
+            }
+          });
+        });
+        
+        caja.addEventListener('mouseleave', function() {
+          organigramaCajas.forEach(otraCaja => {
+            otraCaja.style.opacity = '1';
+          });
+        });
+      });
+      
+      // Efecto inicial para destacar estructura
+      setTimeout(function() {
+        const cajas = document.querySelectorAll('.organigrama-caja');
+        let delay = 0;
+        
+        cajas.forEach(caja => {
+          setTimeout(function() {
+            caja.style.transform = 'translateY(-5px)';
+            setTimeout(function() {
+              caja.style.transform = 'translateY(0)';
+            }, 300);
+          }, delay);
+          delay += 150;
+        });
+      }, 1000);
+      
+      // Cerrar modal al hacer clic fuera de él
+      const modales = document.querySelectorAll('.w3-modal');
+      
+      modales.forEach(modal => {
+        modal.addEventListener('click', function(event) {
+          // Si el clic fue directamente en el fondo del modal (no en su contenido)
+          if (event.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+      });
+    });
     </script>
     
+    <!-- Script de funciones personalizadas -->
+    <script src="./js/functions.js"></script>
     
     </body></html>

@@ -1,10 +1,62 @@
 <!-- Componente: Sidebar (Barra lateral) -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge pixel-corners" style="display:none;z-index:2" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Cerrar
-    <i class="fa fa-remove"></i>
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge pixel-corners" style="display:none;z-index:99999;" id="mySidebar">
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-display-topright w3-text-teal sidebar-close-btn">
+    <i class="fa fa-times"></i>
   </a>
-  <a href="#team" class="w3-bar-item w3-button">Equipo</a>
-  <a href="#work" class="w3-bar-item w3-button">Trabajos</a>
-  <a href="#pricing" class="w3-bar-item w3-button">Servicios</a>
-  <a href="#contact" class="w3-bar-item w3-button">Contacto</a>
+  
+  <!-- Sección superior con logo de la empresa -->
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <i class="fa fa-gamepad"></i>
+      <span>blogfiction.cl</span>
+    </div>
+    <div class="sidebar-tagline">¡Que no te lo cuenten, juégalo!</div>
+  </div>
+  
+  <!-- Enlaces de navegación -->
+  <div class="sidebar-nav-links">
+    <a href="#team" class="w3-bar-item w3-button sidebar-nav-item">
+      <i class="fa fa-users sidebar-icon"></i>
+      <span>Nosotros</span>
+    </a>
+    <a href="#work" class="w3-bar-item w3-button sidebar-nav-item">
+      <i class="fa fa-folder-open sidebar-icon"></i>
+      <span>Portafolio</span>
+    </a>
+    <a href="#pricing" class="w3-bar-item w3-button sidebar-nav-item">
+      <i class="fa fa-trophy sidebar-icon"></i>
+      <span>Servicios</span>
+    </a>
+    <a href="#contact-section" class="w3-bar-item w3-button sidebar-nav-item">
+      <i class="fa fa-envelope sidebar-icon"></i>
+      <span>Contacto</span>
+    </a>
+    
+    <!-- Separador pixelado antes de las redes sociales -->
+    <div class="pixel-separator"></div>
+    
+    <!-- Título redes sociales -->
+    <div class="sidebar-social-title">Síguenos</div>
+    
+    <!-- Redes sociales integradas en el área de navegación -->
+    <div class="sidebar-social-icons">
+      <a href="https://instagram.com/blogfictioncl" class="sidebar-social-icon instagram" aria-label="Instagram">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/blogfiction.cl" class="sidebar-social-icon facebook" aria-label="Facebook">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/blogfiction/" class="sidebar-social-icon linkedin" aria-label="Linkedin">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <a href="https://wa.me/56981977426" class="sidebar-social-icon whatsapp" aria-label="Whatsapp">
+        <i class="fa fa-whatsapp"></i>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Footer del sidebar -->
+  <div class="sidebar-footer">
+    <p>© 2023 Blogfiction. Todos los derechos reservados.</p>
+  </div>
 </nav> 

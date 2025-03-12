@@ -24,8 +24,6 @@
     <link rel="stylesheet" href="./css/components/testimonials.css">
     <link rel="stylesheet" href="./css/components/fonts.css">
     
-    <!-- Agregar más componentes CSS aquí -->
-    
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -73,24 +71,11 @@
     <script src="./js/components/Services.js"></script>
     <script src="./js/components/Footer.js"></script>
     <script src="./js/components/Testimonials.js"></script>
-    <!-- Agregar más scripts de componentes aquí -->
     
     <!-- Script de inicialización -->
     <script>
         // Inicializar el sistema de componentes
         initComponents();
-        
-        // Script para el botón flotante que abre el sidebar
-        document.addEventListener('DOMContentLoaded', function() {
-            // Una vez que el DOM está listo, configuramos el evento
-            const floatingButton = document.querySelector('.w3-circle.w3-button');
-            if (floatingButton) {
-                floatingButton.removeAttribute('onclick');
-                floatingButton.addEventListener('click', function() {
-                    if (typeof w3_open === 'function') w3_open();
-                });
-            }
-        });
     </script>
 </body>
 </html> 

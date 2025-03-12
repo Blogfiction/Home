@@ -60,9 +60,9 @@
 }
 
 .footer-links a::before {
-  content: '>';
+  content: '→';
   position: absolute;
-  left: -15px;
+  left: -20px;
   color: var(--accent-color);
   transition: transform 0.3s;
 }

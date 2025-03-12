@@ -1,31 +1,35 @@
 <!-- Componente: Navbar (Barra de navegación) -->
 <div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-left-align">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>blogfiction.cl</a>
-  <div class="w3-right">
-    <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Equipo</a>
-    <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Trabajos</a>
-    <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Servicios</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contacto</a>
-      <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-button rrss-btn" title="Redes Sociales">RRSS</button>     
-      <div class="w3-dropdown-content social-dropdown">
-        <a href="https://instagram.com/blogfictioncl" class="social-icon instagram" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-        <a href="https://www.facebook.com/blogfiction.cl" class="social-icon facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.linkedin.com/company/blogfiction/" class="social-icon linkedin" aria-label="Linkedin"><i class="fa fa-linkedin"></i></a>
-        <a href="https://wa.me/56981977426" class="social-icon whatsapp" aria-label="Whatsapp"><i class="fa fa-whatsapp"></i></a>
+  <div class="w3-bar w3-theme-d2 w3-left-align navbar-container">
+    <!-- Logo de la empresa (centrado en móvil) -->
+    <a href="#myPage" class="w3-bar-item w3-button w3-teal navbar-logo">
+      <i class="fa fa-gamepad w3-margin-right"></i>blogfiction.cl
+    </a>
+    
+    <!-- Contenedor de navegación principal (visible solo en escritorio) -->
+    <div class="w3-right navbar-links w3-hide-small">
+      <a href="#team" class="w3-bar-item w3-button w3-hover-white nav-link">Nosotros</a>
+      <a href="#work" class="w3-bar-item w3-button w3-hover-white nav-link">Portafolio</a>
+      <a href="#pricing" class="w3-bar-item w3-button w3-hover-white nav-link">Servicios</a>
+      <a href="#contact-section" class="w3-bar-item w3-button w3-hover-white nav-link">Contacto</a>
+      
+      <!-- Íconos de redes sociales en fila horizontal -->
+      <div class="social-row-container">
+        <div class="social-row">
+          <a href="https://instagram.com/blogfictioncl" class="nav-social-icon instagram" aria-label="Instagram">
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/blogfiction.cl" class="nav-social-icon facebook" aria-label="Facebook">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/blogfiction/" class="nav-social-icon linkedin" aria-label="Linkedin">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="https://wa.me/56981977426" class="nav-social-icon whatsapp" aria-label="Whatsapp">
+            <i class="fa fa-whatsapp"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
- </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-    <a href="#team" class="w3-bar-item w3-button">Equipo</a>
-    <a href="#work" class="w3-bar-item w3-button">Trabajos</a>
-    <a href="#pricing" class="w3-bar-item w3-button">Servicios</a>
-    <a href="#contact" class="w3-bar-item w3-button">Contacto</a>
-    <a href="#" class="w3-bar-item w3-button">Buscar</a>
   </div>
 </div> 

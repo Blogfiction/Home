@@ -1,103 +1,87 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <title>¡Que no te lo cuenten, juégalo!</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Blog de ficción y videojuegos">
     
-    <!-- ESTILOS BASE -->
+    <!-- Estilos base -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/styleBlack.css">
     <link rel="stylesheet" href="./css/yeyobitz-theme.css">
     
-    <!-- ESTILOS DE COMPONENTES 
-         Consideración: Estos estilos podrían combinarse en un archivo único
-         para reducir las solicitudes HTTP -->
+    <!-- Estilos de componentes -->
     <link rel="stylesheet" href="./css/components/navbar.css">
     <link rel="stylesheet" href="./css/components/sidebar.css">
+    <link rel="stylesheet" href="./css/components/contact.css">
+    <link rel="stylesheet" href="./css/components/work.css">
+    <link rel="stylesheet" href="./css/components/team.css">
+    <link rel="stylesheet" href="./css/components/footer.css">
     <link rel="stylesheet" href="./css/components/hero.css">
     <link rel="stylesheet" href="./css/components/info-modal.css">
-    <link rel="stylesheet" href="./css/components/team.css">
-    <link rel="stylesheet" href="./css/components/work.css">
-    <link rel="stylesheet" href="./css/components/testimonials.css">
     <link rel="stylesheet" href="./css/components/pricing.css">
     <link rel="stylesheet" href="./css/components/services.css">
-    <link rel="stylesheet" href="./css/components/contact.css">
-    <link rel="stylesheet" href="./css/components/footer.css">
+    <link rel="stylesheet" href="./css/components/testimonials.css">
     
-    <!-- Font Awesome (Considerar cambiar a uso de kit o versión más reciente) -->
+    <!-- Agregar más componentes CSS aquí -->
+    
+    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body id="myPage" class="scanlines">
-    <!-- NAVEGACIÓN -->
-    <header>
-        <div id="navbar-container"></div>
-        <div id="sidebar-container"></div>
-    </header>
 
-    <main>
-        <!-- SECCIÓN HERO -->
-        <section id="inicio">
-            <div id="hero-container"></div>
-            <div id="info-modal-container"></div>
-        </section>
-
-        <!-- SECCIÓN EQUIPO -->
-        <section id="equipo">
-            <div id="team-container"></div>
-        </section>
-
-        <!-- SECCIÓN TRABAJOS -->
-        <section id="trabajos">
-            <div id="work-container"></div>
-        </section>
-
-        <!-- SECCIÓN TESTIMONIOS -->
-        <section id="testimonios">
-            <div id="testimonials-container"></div>
-        </section>
-
-        <!-- SECCIÓN SERVICIOS/PRECIOS -->
-        <section id="servicios">
-            <div id="pricing-container"></div>
-        </section>
-
-        <!-- SECCIÓN CONTACTO -->
-        <section id="contacto">
-            <div id="contact-container"></div>
-        </section>
-    </main>
+    <!-- Contenedores para componentes -->
+    <div id="sidebar-container"></div>
+    <div id="navbar-container"></div>
     
-    <!-- FOOTER -->
-    <footer>
-        <div id="footer-container"></div>
-    </footer>
+    <!-- Hero/Image Header -->
+    <div id="hero-container"></div>
     
-    <!-- SCRIPTS BASE -->
+    <!-- Modal Info -->
+    <div id="info-modal-container"></div>
+    
+    <!-- Team Container -->
+    <div id="team-container"></div>
+    
+    <!-- Work Row -->
+    <div id="work-container"></div>
+    
+    <!-- Testimonials Container -->
+    <div id="testimonials-container"></div>
+    
+    <!-- Pricing/Services Row -->
+    <div id="pricing-container"></div>
+    
+    <!-- Contact Container -->
+    <div id="contact-container"></div>
+    
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    
+    <!-- Scripts de componentes -->
     <script src="./js/components.js"></script>
     
-    <!-- SCRIPTS DE COMPONENTES 
-         Consideración: Podrían combinarse y minificarse en un solo archivo -->
+    <!-- Scripts individuales de componentes -->
     <script src="./js/components/Navbar.js"></script>
     <script src="./js/components/Sidebar.js"></script>
+    <script src="./js/components/Contact.js"></script>
+    <script src="./js/components/Work.js"></script>
+    <script src="./js/components/Team.js"></script>
     <script src="./js/components/Hero.js"></script>
     <script src="./js/components/InfoModal.js"></script>
-    <script src="./js/components/Team.js"></script>
-    <script src="./js/components/Work.js"></script>
-    <script src="./js/components/Testimonials.js"></script>
     <script src="./js/components/Services.js"></script>
-    <script src="./js/components/Contact.js"></script>
     <script src="./js/components/Footer.js"></script>
+    <script src="./js/components/Testimonials.js"></script>
+    <!-- Agregar más scripts de componentes aquí -->
     
-    <!-- INICIALIZACIÓN -->
+    <!-- Script de inicialización -->
     <script>
-        // Inicializar el sistema de componentes cuando el DOM esté listo
+        // Inicializar el sistema de componentes
+        initComponents();
+        
+        // Script para el botón flotante que abre el sidebar
         document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar componentes
-            initComponents();
-            
-            // Configurar botón flotante para sidebar
+            // Una vez que el DOM está listo, configuramos el evento
             const floatingButton = document.querySelector('.w3-circle.w3-button');
             if (floatingButton) {
                 floatingButton.removeAttribute('onclick');

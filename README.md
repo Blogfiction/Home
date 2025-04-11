@@ -13,6 +13,7 @@ Home/
   │   ├── InfoModal.html   # Componente de modal informativo
   │   ├── Team.html        # Componente de equipo
   │   ├── Work.html        # Componente de trabajos/proyectos
+  │   ├── Testimonials.html # Componente de testimonios/experiencias
   │   ├── Services.html    # Componente de servicios/precios
   │   ├── Contact.html     # Componente de sección de contacto
   │   └── Footer.html      # Componente de pie de página
@@ -25,8 +26,10 @@ Home/
   │   │   ├── info-modal.css # Estilos para el modal informativo
   │   │   ├── team.css     # Estilos para el equipo
   │   │   ├── work.css     # Estilos para trabajos/proyectos
+  │   │   ├── testimonials.css # Estilos para testimonios/experiencias
   │   │   ├── pricing.css  # Estilos para servicios/precios
   │   │   ├── contact.css  # Estilos para la sección de contacto
+  │   │   ├── fonts.css    # Estilos para tipografías
   │   │   └── footer.css   # Estilos para el pie de página
   │   │
   │   ├── style.css        # Estilos base globales
@@ -41,6 +44,7 @@ Home/
   │   │   ├── InfoModal.js # Lógica para el modal informativo
   │   │   ├── Team.js      # Lógica para el equipo
   │   │   ├── Work.js      # Lógica para trabajos/proyectos
+  │   │   ├── Testimonials.js # Lógica para testimonios/experiencias
   │   │   ├── Services.js  # Lógica para servicios/precios
   │   │   ├── Contact.js   # Lógica para la sección de contacto
   │   │   └── Footer.js    # Lógica para el pie de página
@@ -70,6 +74,8 @@ El sistema utiliza JavaScript vanilla para cargar componentes HTML en contenedor
 4. Cada componente tiene una función de inicialización (`initComponentName`) que se llama automáticamente después de que el componente se carga.
 
 5. Se utiliza un sistema de eventos personalizado para coordinar la carga e inicialización de los componentes.
+
+6. El sistema incluye funcionalidades adicionales como la conversión automática de direcciones de correo en enlaces clickeables con formatos especiales.
 
 ## Guía para Mantener y Editar Componentes
 
@@ -203,6 +209,21 @@ Este componente muestra el equipo de la empresa con:
   - Sección de practicantes agregada recientemente
   - Diseño con estilo retro pixel consistente
 
+### Componente Testimonials (Testimonios)
+
+Este nuevo componente muestra experiencias y opiniones de clientes:
+
+- **Estructura**: Carrusel/slider de tarjetas con testimonios
+- **Interactividad**:
+  - Navegación manual mediante flechas
+  - Cambio automático temporizado
+  - Indicadores de posición actual
+- **Características**:
+  - Diseño responsivo que se adapta a diferentes pantallas
+  - Animaciones de transición suaves entre testimonios
+  - Inclusión de avatar y nombre del cliente
+  - Clasificación por estrellas
+
 ### Componente Footer (Pie de página)
 
 El pie de página incluye:
@@ -217,6 +238,7 @@ El pie de página incluye:
 - Mejora de contraste y accesibilidad
 - Implementación de efectos visuales avanzados
 - Optimización para dispositivos móviles
+- Integración de la conversión automática de emails a enlaces clickeables
 
 ## Guía para Agregar Nuevos Componentes
 
@@ -367,6 +389,7 @@ switch (e.detail.id) {
 - **Utilice lazy loading** para imágenes (`loading="lazy"` en etiquetas `<img>`)
 - **Minimice el uso de JavaScript** innecesario
 - **Evite la manipulación excesiva del DOM**
+- **Comprima los archivos CSS y JS** para producción
 
 ### Mantenimiento
 
@@ -374,6 +397,7 @@ switch (e.detail.id) {
 - **Use comentarios descriptivos** en el código
 - **Mantenga la coherencia** en la estructura y nombrado
 - **Haga pruebas después de cambios significativos**
+- **Utilice control de versiones** para seguir los cambios
 
 ### Estilo y Diseño
 
@@ -381,25 +405,52 @@ switch (e.detail.id) {
 - **Mantenga consistencia visual** con el estilo retro pixel
 - **Pruebe en diferentes dispositivos** para asegurar responsividad
 - **Considere la accesibilidad** (contraste, navegación por teclado)
+- **Mantenga las animaciones sutiles** para no distraer del contenido
+
+## Características Globales
+
+### Conversión Automática de Emails
+
+El sistema incluye una funcionalidad que detecta y convierte automáticamente direcciones de correo electrónico en enlaces clickeables con estilo personalizado:
+
+- **Funcionamiento**: Busca patrones de email en el texto y los convierte en enlaces `mailto:`
+- **Estilo**: Incluye subrayado, tooltip y animación hover personalizada
+- **Ventajas**: Mejora la usabilidad sin necesidad de codificar manualmente cada enlace
+
+### Sistema de Temas
+
+El proyecto utiliza un sistema de variables CSS para facilitar cambios de tema:
+
+- **Archivo principal**: `yeyobitz-theme.css` contiene todas las variables globales
+- **Implementación**: Cada componente usa estas variables en lugar de valores hardcodeados
+- **Ventajas**: Permite cambiar fácilmente colores, espaciados y tipografías en todo el sitio
 
 ## Historial de Cambios Importantes
 
 ### Última actualización (Marzo 2025)
+
+- **Nuevo Componente Testimonials**: 
+  - Implementación completa del carrusel de testimonios de clientes
+  - Sistema de navegación manual y automática
+  - Diseño responsivo con animaciones fluidas
 
 - **Componente Work**: 
   - Simplificación eliminando sistema de filtros y botón "cargar más"
   - Corrección de visibilidad de tarjetas
   - Optimización de rendimiento
 
-- **Componente Team**:
-  - Adición de sección para practicantes
-  - Mejoras en los modales de información
+- **Componentes Navbar y Sidebar**:
+  - Mejora de la navegación móvil
+  - Integración mejorada entre ambos componentes
+  - Animaciones más fluidas
 
-- **Componente Footer**:
-  - Mejoras de contraste y accesibilidad
-  - Implementación de efecto glitch 3D en la firma
+- **Componente Contact**:
+  - Validación mejorada de formularios
+  - Integración con servicios de captcha
+  - Mensajes de error más descriptivos
 
 - **General**:
+  - Implementación del sistema automático de enlaces para emails
   - Optimización de la carga de componentes
   - Corrección de bugs de inicialización
   - Documentación completa del sistema

@@ -1,0 +1,23 @@
+<!-- Componente: Control de Música de Fondo -->
+<div id="background-music-control" class="music-control-container">
+    <div class="music-control-panel">
+        <button id="music-toggle-btn" class="music-toggle-btn" aria-label="Reproducir/Pausar música">
+            <i class="fa fa-music" id="music-icon"></i>
+        </button>
+        <div class="music-info">
+            <span class="music-label">Música</span>
+            <div class="volume-control">
+                <i class="fa fa-volume-down volume-icon"></i>
+                <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="50">
+                <i class="fa fa-volume-up volume-icon"></i>
+            </div>
+        </div>
+    </div>
+    <audio id="background-music" loop>
+        <!-- El usuario deberá agregar su archivo de música aquí -->
+        <source src="./audio/background-music.mp3" type="audio/mpeg">
+        <source src="./audio/background-music.ogg" type="audio/ogg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+</div>
+

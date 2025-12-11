@@ -42,7 +42,8 @@ function initComponents() {
       { id: 'testimonials-container', url: './components/Testimonials.html' },
       { id: 'pricing-container', url: './components/Services.html' },
       { id: 'contact-container', url: './components/Contact.html' },
-      { id: 'footer-container', url: './components/Footer.html' }
+      { id: 'footer-container', url: './components/Footer.html' },
+      { id: 'background-music-container', url: './components/BackgroundMusic.html' }
     ];
 
     // Variables para controlar la carga de componentes
@@ -84,6 +85,9 @@ function initComponents() {
           break;
         case 'hero-container':
           if (typeof initHero === 'function') initHero();
+          break;
+        case 'background-music-container':
+          if (typeof initBackgroundMusic === 'function') initBackgroundMusic();
           break;
         // Agrega más casos según sea necesario
       }

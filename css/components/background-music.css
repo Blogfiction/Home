@@ -1,0 +1,180 @@
+/* Estilos para el Control de Música de Fondo */
+
+.music-control-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.music-control-panel {
+  background-color: var(--fondo-secundario);
+  border: 3px solid var(--borde-principal);
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.music-control-panel:hover {
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.4);
+  transform: translate(-2px, -2px);
+}
+
+.music-toggle-btn {
+  background-color: var(--primary-color);
+  border: 3px solid var(--borde-principal);
+  color: var(--text-light);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.music-toggle-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.music-toggle-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.music-toggle-btn.playing {
+  background-color: var(--accent-color);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 4px 4px 0px rgba(255, 94, 91, 0.5);
+  }
+}
+
+.music-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.music-label {
+  font-size: 10px;
+  color: var(--texto-principal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volume-icon {
+  font-size: 12px;
+  color: var(--texto-principal);
+  flex-shrink: 0;
+}
+
+.volume-slider {
+  flex: 1;
+  height: 6px;
+  background: var(--borde-secundario);
+  border: 2px solid var(--borde-principal);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-color);
+  border: 2px solid var(--borde-principal);
+  cursor: pointer;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  background: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--primary-color);
+  border: 2px solid var(--borde-principal);
+  cursor: pointer;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.volume-slider::-moz-range-thumb:hover {
+  background: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .music-control-container {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .music-control-panel {
+    padding: 10px;
+    min-width: 160px;
+    gap: 10px;
+  }
+
+  .music-toggle-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .music-label {
+    font-size: 8px;
+  }
+
+  .volume-icon {
+    font-size: 10px;
+  }
+
+  .volume-slider {
+    height: 4px;
+  }
+
+  .volume-slider::-webkit-slider-thumb,
+  .volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Ocultar el audio element (solo se usa para control) */
+#background-music {
+  display: none;
+}
+

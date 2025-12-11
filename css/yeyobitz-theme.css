@@ -3,17 +3,17 @@
 /* Importación de fuente Press Start 2P de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* Variables de colores */
+/* Variables de colores - Paleta Blogfiction (Vibrante) */
 :root {
-  /* Colores principales */
-  --primary-color: #7E3FF2;       /* Púrpura más vibrante */
-  --primary-dark: #5D25C4;        /* Púrpura oscuro */
-  --primary-light: #9C6FF9;       /* Púrpura claro */
+  /* Colores principales - Azul del logo (más vibrante) */
+  --primary-color: #0066FF;       /* Azul brillante y vibrante */
+  --primary-dark: #0052FF;         /* Azul oscuro vibrante */
+  --primary-light: #3399FF;       /* Azul claro vibrante */
   
-  /* Colores de acento */
-  --accent-color: #FF5E5B;        /* Rojo/coral con mejor contraste */
-  --accent-secondary: #00E3CC;    /* Turquesa vibrante */
-  --accent-tertiary: #FFD166;     /* Amarillo cálido */
+  /* Colores de acento - Gradiente del texto (más vibrante) */
+  --accent-color: #FF4444;        /* Naranja/Rosa vibrante */
+  --accent-secondary: #FF1744;      /* Magenta/Púrpura vibrante */
+  --accent-tertiary: #FFC107;     /* Amarillo dorado vibrante */
   
   /* Grises */
   --dark-gray: #151521;           /* Casi negro con tinte púrpura */
@@ -21,42 +21,50 @@
   --light-gray: #E0E0E0;          /* Gris claro */
 
   /* Colores de interfaz */
-  --background-main: #F5F5F5;     /* Fondo principal claro */
+  --background-main: #FFFFFF;     /* Fondo principal blanco */
   --background-dark: var(--dark-gray);  /* Fondo oscuro */
   --text-dark: #121212;           /* Texto oscuro */
   --text-light: #FFFFFF;          /* Texto claro */
   --text-muted: #424242;          /* Texto secundario */
   
   /* Colores de estado */
-  --success: #00BFA6;             /* Verde */
-  --warning: #FFD166;             /* Amarillo */
-  --error: #FF5E5B;               /* Rojo */
-  --info: #20A4F3;                /* Azul */
+  --success: #00E676;             /* Verde vibrante */
+  --warning: #FFC107;             /* Amarillo dorado vibrante de la marca */
+  --error: #FF4444;               /* Rojo/Naranja vibrante del gradiente */
+  --info: #0066FF;                /* Azul vibrante del logo */
   
   /* Colores para tags */
-  --tag-juego: var(--primary-color);
-  --tag-web: var(--accent-secondary);
-  --tag-design: var(--accent-tertiary);
-  --tag-tienda: var(--accent-color);
+  --tag-juego: var(--primary-color);      /* Azul del logo */
+  --tag-web: var(--accent-secondary);      /* Magenta del gradiente */
+  --tag-design: var(--accent-tertiary);   /* Amarillo dorado */
+  --tag-tienda: var(--accent-color);       /* Naranja/Rosa del gradiente */
 
   /* Colores Secundarios */
   --fondo-secundario: #FFFFFF; /* White */
-  --fondo-tarjetas-pasadas: #F9FAFB; /* Gray 50 */
-  --borde-principal: #1F2937; /* Gray 800 */
+  --fondo-tarjetas-pasadas: #F5F5F5; /* Gris muy claro */
+  --borde-principal: #0066FF; /* Azul vibrante del logo */
   --borde-secundario: #9CA3AF; /* Gray 400 */
 
   /* Colores de Estado */
-  --exito: #10B981; /* Green 500 */
-  --advertencia: #F59E0B; /* Yellow 500 */
-  --informacion: #3B82F6; /* Blue 500 */
+  --exito: #00E676; /* Verde vibrante */
+  --advertencia: #FFC107; /* Amarillo dorado vibrante de la marca */
+  --informacion: #0066FF; /* Azul vibrante del logo */
 
   /* Colores de Etiquetas */
-  --juego-fondo: #DBEAFE; /* Blue 100 */
-  --juego-borde: #3B82F6; /* Blue 500 */
-  --juego-texto: #1D4ED8; /* Blue 700 */
-  --tienda-fondo: #D1FAE5; /* Green 100 */
-  --tienda-borde: #10B981; /* Green 500 */
-  --tienda-texto: #047857; /* Green 700 */
+  --juego-fondo: #E3F2FD; /* Azul claro basado en el logo */
+  --juego-borde: #0066FF; /* Azul vibrante del logo */
+  --juego-texto: #0052FF; /* Azul oscuro vibrante */
+  --tienda-fondo: #FFE0E0; /* Naranja claro vibrante del gradiente */
+  --tienda-borde: #FF4444; /* Naranja/Rosa vibrante del gradiente */
+  --tienda-texto: #FF1744; /* Magenta vibrante del gradiente */
+
+  /* Variables adicionales usadas en el código */
+  --acento-primario: #0066FF;      /* Azul vibrante del logo - Color principal */
+  --acento-secundario: #FFC107;    /* Amarillo dorado vibrante de las letras BF */
+  --fondo-principal: #FFFFFF;      /* Fondo blanco principal */
+  --texto-principal: #121212;      /* Texto oscuro principal */
+  --titulo-principal: #0066FF;     /* Títulos en azul vibrante del logo */
+  --titulo-secundario: #FF1744;    /* Títulos secundarios en magenta vibrante */
 }
 
 /* Estilos básicos */
@@ -211,7 +219,7 @@ h4, h5, h6 {
 .modal-videojuego .modal-cargo {
   font-family: 'Press Start 2P', cursive;
   display: block;
-  background-color: #0046b8;
+  background-color: #0066FF;
   color: white;
   padding: 8px 15px;
   font-size: 14px;
@@ -791,7 +799,7 @@ footer .w3-button {
 
 /* Estilos específicos para los diferentes tipos de cajas */
 .organigrama-caja.direccion {
-  background-color: #0046b8;
+  background-color: #0066FF;
   color: white;
   min-width: 250px;
   padding: 20px;
@@ -807,13 +815,13 @@ footer .w3-button {
   left: 0;
   right: 0;
   height: 7px;
-  background: linear-gradient(90deg, #ffd700, #ff6b6b, #ffd700);
+  background: linear-gradient(90deg, #FFC107, #FF4444, #FFC107);
   z-index: 2;
 }
 
 .organigrama-caja.desarrollo,
 .organigrama-caja.finanzas {
-  background-color: #3373e3;
+  background-color: #3399FF;
   color: white;
   min-width: 220px;
   border-width: 4px;
@@ -840,7 +848,7 @@ footer .w3-button {
 }
 
 .organigrama-caja.sub-departamento {
-  background-color: #ffd700;
+  background-color: #FFC107;
   color: var(--texto-principal);
   border-width: 3px;
   min-width: 180px;

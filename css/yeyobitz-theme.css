@@ -38,6 +38,7 @@
   --tag-web: var(--accent-secondary);      /* Magenta del gradiente */
   --tag-design: var(--accent-tertiary);   /* Amarillo dorado */
   --tag-tienda: var(--accent-color);       /* Naranja/Rosa del gradiente */
+  --tag-vinculacion: var(--primary-color); /* Azul del logo */
 
   /* Colores Secundarios */
   --fondo-secundario: #FFFFFF; /* White */
@@ -404,6 +405,11 @@ h4, h5, h6 {
 
 .tag-tienda {
   background-color: var(--tag-tienda);
+  color: white;
+}
+
+.tag-vinculacion {
+  background-color: var(--tag-vinculacion);
   color: white;
 }
 

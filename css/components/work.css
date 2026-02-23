@@ -22,6 +22,11 @@
   --design-fondo: var(--accent-tertiary);
   --design-texto: var(--text-dark);
   --design-borde: var(--primary-dark);
+  
+  /* Variables para categoría vinculación */
+  --vinculacion-fondo: var(--primary-color);
+  --vinculacion-texto: var(--text-light);
+  --vinculacion-borde: var(--primary-dark);
 }
 
 /* Estructura principal */
@@ -245,6 +250,12 @@
   background-color: var(--design-fondo);
   color: var(--design-texto);
   border: 2px solid var(--design-borde);
+}
+
+.tag-vinculacion {
+  background-color: var(--vinculacion-fondo);
+  color: var(--vinculacion-texto);
+  border: 2px solid var(--vinculacion-borde);
 }
 
 .w3-tag:hover {

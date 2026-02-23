@@ -367,11 +367,75 @@
 /* Estilos para la sección de practicantes */
 .practicantes-seccion {
   margin-top: 80px;
-  padding: 40px 20px;
+  padding: 0;
   background-color: var(--text-light);
   border-radius: 10px;
   border: 4px solid var(--primary-dark);
   box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Pestaña para abrir/cerrar */
+.practicantes-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-tertiary));
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  font-family: inherit;
+}
+
+.practicantes-toggle:hover {
+  background: linear-gradient(135deg, var(--accent-tertiary), var(--accent-color));
+}
+
+.practicantes-toggle:active {
+  transform: scale(0.98);
+}
+
+.practicantes-toggle .titulo-pixel {
+  margin: 0;
+}
+
+.practicantes-toggle-icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.practicantes-seccion.practicantes-abierto .practicantes-toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Contenido colapsable */
+.practicantes-contenido {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.practicantes-seccion.practicantes-abierto .practicantes-contenido {
+  grid-template-rows: 1fr;
+}
+
+.practicantes-contenido .practicantes-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.practicantes-contenido .practicantes-descripcion {
+  padding: 24px 20px 0;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.practicantes-contenido .practicantes-container {
+  padding: 0 20px 40px;
 }
 
 .subtitulo-pixel {
@@ -380,8 +444,6 @@
 }
 
 .practicantes-descripcion {
-  max-width: 700px;
-  margin: 0 auto 40px;
   font-size: 16px;
 }
 

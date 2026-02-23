@@ -102,12 +102,17 @@
         </div>
     </div>
     
-    <!-- Sección de Practicantes -->
-    <div class="practicantes-seccion">
-        <h3 class="titulo-pixel subtitulo-pixel">NUESTROS PRACTICANTES</h3>
-        <p class="practicantes-descripcion">El equipo de talento emergente que está forjando el futuro de nuestra empresa</p>
-        
-        <div class="practicantes-container">
+    <!-- Sección de Practicantes (pestaña abrir/cerrar) -->
+    <div class="practicantes-seccion" id="practicantes-seccion">
+        <button type="button" class="practicantes-toggle pixel-corners" id="practicantes-toggle" aria-expanded="false" aria-controls="practicantes-contenido">
+            <h3 class="titulo-pixel subtitulo-pixel">NUESTROS PRACTICANTES</h3>
+            <span class="practicantes-toggle-icon" aria-hidden="true">▼</span>
+        </button>
+        <div id="practicantes-contenido" class="practicantes-contenido" role="region" aria-labelledby="practicantes-toggle">
+            <div class="practicantes-inner">
+            <p class="practicantes-descripcion">El equipo de talento emergente que está forjando el futuro de nuestra empresa</p>
+            
+            <div class="practicantes-container">
             <!-- Tarjeta 1 -->
             <div class="tarjeta-practicante pixel-corners">
                 <div class="practicante-foto-container">
@@ -184,6 +189,7 @@
                 <p class="practicante-cargo">QA Testing - Desarrollo Fullstack</p>
                 <p class="practicante-descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptatum!</p>
                 <button class="practicante-contacto pixel-corners">Contacto</button>
+            </div>
             </div>
         </div>
     </div>

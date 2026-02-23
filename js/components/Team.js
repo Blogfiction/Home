@@ -97,6 +97,16 @@ function initTeam() {
     });
   });
 
+  // Pestaña abrir/cerrar sección de practicantes
+  const practicantesToggle = document.getElementById('practicantes-toggle');
+  const practicantesSeccion = document.getElementById('practicantes-seccion');
+  if (practicantesToggle && practicantesSeccion) {
+    practicantesToggle.addEventListener('click', function() {
+      const abierto = practicantesSeccion.classList.toggle('practicantes-abierto');
+      practicantesToggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    });
+  }
+
   // Efectos para las tarjetas de practicantes
   const tarjetasPracticantes = document.querySelectorAll('.tarjeta-practicante');
   
@@ -126,7 +136,7 @@ function initTeam() {
     });
   });
   
-  // Detectar cuando la sección de practicantes es visible
+  // Detectar cuando la sección de practicantes (el encabezado) es visible
   window.addEventListener('scroll', function() {
     const practicantesSeccion = document.querySelector('.practicantes-seccion');
     if (practicantesSeccion && isElementInViewport(practicantesSeccion)) {

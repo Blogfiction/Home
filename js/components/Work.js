@@ -95,17 +95,7 @@ function initWork() {
         contactProjectBtn.addEventListener('click', function() {
           // Cerrar el modal
           projectModal.style.display = 'none';
-          
-          // Scroll hasta la sección de contacto
-          document.getElementById('contact').scrollIntoView({
-            behavior: 'smooth'
-          });
-          
-          // Opcional: pre-llenar el formulario con información del proyecto
-          const contactSubject = document.querySelector('#contact-form input[name="Subject"]');
-          if (contactSubject) {
-            contactSubject.value = `Consulta sobre: ${title}`;
-          }
+          window.location.href = 'contacto.html';
         });
       }
     });

@@ -3,9 +3,10 @@
  */
 
 function initNavbar() {
-  // Efecto de scroll para la navbar
   function handleScroll() {
     const navbar = document.querySelector('.w3-bar.w3-theme-d2');
+    if (!navbar) return;
+
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > 50) {
@@ -21,74 +22,43 @@ function initNavbar() {
     }
   }
 
-  // Observador de secciones para resaltar enlaces activos
-  function setupSectionObserver() {
-    const sections = document.querySelectorAll('div[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    if(sections.length === 0 || navLinks.length === 0) return;
-    
-    const observerOptions = {
-      rootMargin: '-20% 0px -80% 0px',
-      threshold: 0
-    };
-    
-    const observerCallback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const currentId = entry.target.id;
-          
-          // Remover el estado activo de todos los enlaces
-          navLinks.forEach(link => {
-            link.classList.remove('active-link');
-            
-            // Si el enlace apunta a la sección actual, activarlo
-            const href = link.getAttribute('href').substring(1); // Eliminar el #
-            if (href === currentId) {
-              link.classList.add('active-link');
-            }
-          });
-        }
-      });
-    };
-    
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    sections.forEach(section => observer.observe(section));
+  function setupActiveNavLink() {
+    const navLinks = document.querySelectorAll('.nav-link[data-page]');
+    if (navLinks.length === 0) return;
+
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    navLinks.forEach(link => {
+      link.classList.remove('active-link');
+      const page = link.getAttribute('data-page');
+      if (page === currentPage) {
+        link.classList.add('active-link');
+      }
+    });
   }
 
-  // Asignar eventos de clic a los enlaces del menú
   const navLinks = document.querySelectorAll('.w3-bar-item.w3-button');
   navLinks.forEach(link => {
-    // Agregar efecto de clic
     link.addEventListener('mousedown', function() {
       this.style.transform = 'translate(2px, 2px)';
     });
-    
+
     link.addEventListener('mouseup', function() {
       this.style.transform = '';
     });
-    
+
     link.addEventListener('mouseleave', function() {
       this.style.transform = '';
     });
   });
 
-  // Asignar evento al botón de menú de escritorio
-  const desktopMenuBtn = document.querySelector('.desktop-menu-btn');
-  if (desktopMenuBtn && typeof w3_open === 'function') {
-    desktopMenuBtn.addEventListener('click', w3_open);
-  }
-
-  // Animar la entrada de los íconos sociales en fila horizontal
   function animateSocialIcons() {
     const socialIcons = document.querySelectorAll('.nav-social-icon');
-    
+
     socialIcons.forEach((icon, index) => {
-      // Configurar estado inicial
       icon.style.opacity = "0";
       icon.style.transform = "translateY(10px)";
-      
-      // Animar con retardo escalonado
+
       setTimeout(() => {
         icon.style.transition = "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
         icon.style.opacity = "1";
@@ -96,38 +66,30 @@ function initNavbar() {
       }, 300 + (index * 100));
     });
   }
-  
-  // Agregar efectos de hover y clic para íconos sociales
+
   const socialIcons = document.querySelectorAll('.nav-social-icon');
   socialIcons.forEach(icon => {
-    // Efecto de clic
     icon.addEventListener('mousedown', function() {
       this.style.transform = 'scale(0.9)';
       this.style.boxShadow = '1px 1px 0 rgba(0, 0, 0, 0.25)';
     });
-    
+
     icon.addEventListener('mouseup', function() {
       this.style.transform = '';
       this.style.boxShadow = '';
     });
-    
+
     icon.addEventListener('mouseleave', function() {
       this.style.transform = '';
       this.style.boxShadow = '';
     });
   });
 
-  // Inicializar efectos de scroll
   window.addEventListener('scroll', handleScroll);
-  
-  // Inicializar observador de secciones
-  setupSectionObserver();
-  
-  // Animar íconos sociales al cargar
+  setupActiveNavLink();
   animateSocialIcons();
 
-  console.log('Navbar component initialized with desktop menu button');
+  console.log('Navbar component initialized');
 }
 
-// Exportar la función de inicialización
-window.initNavbar = initNavbar; 
+window.initNavbar = initNavbar;

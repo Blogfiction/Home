@@ -107,9 +107,16 @@ function initSidebar() {
   };
 
   // Agregar eventos a los enlaces del sidebar para que lo cierren al hacer clic
-  const sidebarLinks = document.querySelectorAll('#mySidebar a[href^="#"]');
+  const sidebarLinks = document.querySelectorAll('#mySidebar .sidebar-nav-item');
   sidebarLinks.forEach(link => {
     link.addEventListener('click', window.w3_close);
+  });
+
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  sidebarLinks.forEach(link => {
+    if (link.getAttribute('data-page') === currentPage) {
+      link.classList.add('active-link');
+    }
   });
 
   // Asignar evento al botón de cerrar
